@@ -1,18 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 
-// Import Bootstrap and custom styles
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/style.css';
-import './css/responsive.css';
-import './css/font-awesome.min.css';
 
-function App() {
-  return (
-
-      <LandingPage />
-
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      
+    </Routes>
+  </Router>
+);
 
 export default App;

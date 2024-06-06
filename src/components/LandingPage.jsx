@@ -5,8 +5,9 @@ import '../js/custom.js'; // Import custom JS
 import logo from '../assets/images/LOGO1.png';
 import sliderImg from '../assets/images/slider-img.png';
 import heroBg from '../assets/images/hero-bg.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-const LandingPage2 = () => (
+const LandingPage = () => (
   <div className="hero_area">
 
     <div className="hero_bg_box">
@@ -18,37 +19,37 @@ const LandingPage2 = () => (
     {/* header section starts */}
     <header className="header_section">
       <div className="container-fluid">
-      <nav className="navbar navbar-expand-lg custom_nav-container fixed-top">
-        <a className="navbar-brand" href="index.html">
-          <span>
-            TekRafiki
-          </span>
-        </a>
+        <nav className="navbar navbar-expand-lg custom_nav-container fixed-top">
+          <a className="navbar-brand" href="index.html">
+            <span>
+              TekRafiki
+            </span>
+          </a>
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className=""> </span>
-        </button>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className=""> </span>
+          </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <a className="nav-link" href="">Home <span className="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about"> About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#team">Team</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <a className="nav-link" href="">Home <span className="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#about"> About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#team">Team</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
     {/* end header section */}
     
     {/* slider section */}
-    <section id = "home" className="slider_section">
+    <section id="home" className="slider_section">
       <div id="customCarousel1" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -62,6 +63,7 @@ const LandingPage2 = () => (
                     <p>
                       TekRafiki aims to support the implementation of the new syllabus in the Department of Computing. It involves leveraging LLMs to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
                     </p>
+                    <Link to="/home" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -83,6 +85,7 @@ const LandingPage2 = () => (
                     <p>
                       A robust AI-driven platform that streamlines curriculum design processes and enhances educational content.
                     </p>
+                    <Link to="/home" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -104,6 +107,7 @@ const LandingPage2 = () => (
                     <p>
                       Improved alignment of the computing syllabus with the current technological trends and industry standards.
                     </p>
+                    <Link to="/home" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -125,7 +129,7 @@ const LandingPage2 = () => (
     {/* end slider section */}
 
     {/* about section */}
-    <section id= "about" className="about_section layout_padding">
+    <section id="about" className="about_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center">
           <h2>
@@ -320,4 +324,4 @@ const LandingPage2 = () => (
   </div>
 );
 
-export default LandingPage2;
+export default LandingPage;
