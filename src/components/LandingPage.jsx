@@ -63,7 +63,7 @@ const LandingPage = () => (
                     <p>
                       TekRafiki aims to support the implementation of the new syllabus in the Department of Computing. It involves leveraging LLMs to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
                     </p>
-                    <Link to="/home" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
+                    <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
                   </div>
                 </div>
                 <div className="col-md-6">
