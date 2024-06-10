@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .models import CustomUser, StudentProfile, NonStudentProfile
 from .serializers import UserSerializer, StudentProfileSerializer, NonStudentProfileSerializer
+from django.utils.text import slugify
+
 
 @api_view(['POST'])
 def register_user(request):
@@ -28,7 +30,16 @@ def register_user(request):
     if CustomUser.objects.filter(email=email).exists():
         return Response({'error': 'Email already in use'}, status=status.HTTP_400_BAD_REQUEST)
     
+    # Generate a unique username
+    base_username = slugify(email.split('@')[0])
+    username = base_username
+    counter = 1
+    while CustomUser.objects.filter(username=username).exists():
+        username = f"{base_username}{counter}"
+        counter += 1
+    
     user = CustomUser.objects.create(
+        username=username,
         email=email,
         is_student=(user_type == 'student'),
         is_lecturer=(user_type == 'lecturer'),

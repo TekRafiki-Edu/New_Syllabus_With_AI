@@ -3,12 +3,15 @@ import random
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 def generate_user_id():
     characters = string.ascii_letters + string.digits
     return ''.join(random.choice(characters) for _ in range(15))
 
+
 class CustomUser(AbstractUser):
     user_id = models.CharField(max_length=15, unique=True, default=generate_user_id)
+    email = models.EmailField(unique=True)  # Add unique constraint here
     is_student = models.BooleanField(default=False)
     is_lecturer = models.BooleanField(default=False)
     institution_admin = models.BooleanField(default=False)
