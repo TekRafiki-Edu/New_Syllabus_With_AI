@@ -17,9 +17,8 @@
       },
      
   ]
-
- ```
-
+  ```
+#
 ### Create Institution
 **URL:** `/institutions/`  
 **Method:** `POST`  
@@ -31,7 +30,7 @@
     "name": "Institution Name",
     "admin": 1
 }
-
+ ```
 ### Response
 
 {
