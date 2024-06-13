@@ -97,3 +97,78 @@ def non_student_login(request):
     
     serializer = NonStudentProfileSerializer(profile)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
+
+
+
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from rest_framework.decorators import action
+from django.shortcuts import get_object_or_404
+from .models import CustomUser, StudentProfile, NonStudentProfile
+from .serializers import StudentProfileSerializer, NonStudentProfileSerializer, CustomUserSerializer
+
+class StudentProfileViewSet(viewsets.ViewSet):
+    def create(self, request):
+        user_id = request.data.get('user_id')
+        user = get_object_or_404(CustomUser, user_id=user_id, is_student=True)
+        serializer = StudentProfileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def list(self, request):
+        queryset = StudentProfile.objects.all()
+        serializer = StudentProfileSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def retrieve(self, request, pk=None):
+        profile = get_object_or_404(StudentProfile, pk=pk)
+        serializer = StudentProfileSerializer(profile)
+        return Response(serializer.data)
+
+    def update(self, request, pk=None):
+        profile = get_object_or_404(StudentProfile, pk=pk)
+        serializer = StudentProfileSerializer(profile, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk=None):
+        profile = get_object_or_404(StudentProfile, pk=pk)
+        profile.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+class NonStudentProfileViewSet(viewsets.ViewSet):
+    def create(self, request):
+        user_id = request.data.get('user_id')
+        user = get_object_or_404(CustomUser, user_id=user_id, is_student=False)
+        serializer = NonStudentProfileSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def list(self, request):
+        queryset = NonStudentProfile.objects.all()
+        serializer = NonStudentProfileSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def retrieve(self, request, pk=None):
+        profile = get_object_or_404(NonStudentProfile, pk=pk)
+        serializer = NonStudentProfileSerializer(profile)
+        return Response(serializer.data)
+
+    def update(self, request, pk=None):
+        profile = get_object_or_404(NonStudentProfile, pk=pk)
+        serializer = NonStudentProfileSerializer(profile, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk=None):
+        profile = get_object_or_404(NonStudentProfile, pk=pk)
+        profile.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

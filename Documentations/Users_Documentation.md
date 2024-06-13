@@ -244,3 +244,4 @@
   "error": "Invalid credentials or user is a student"
 }
 ```
+
