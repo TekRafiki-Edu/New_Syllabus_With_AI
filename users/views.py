@@ -77,6 +77,7 @@ def student_login(request):
     serializer = StudentProfileSerializer(profile)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
+
 @api_view(['POST'])
 def non_student_login(request):
     employee_id = request.data.get('employee_id')
