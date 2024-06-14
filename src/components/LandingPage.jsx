@@ -5,6 +5,9 @@ import '../js/custom.js'; // Import custom JS
 import logo from '../assets/images/LOGO1.png';
 import sliderImg from '../assets/images/slider-img.png';
 import heroBg from '../assets/images/hero-bg.png';
+import jhub from  '../assets/images/JHUB Africa.png';
+import jkuat from  '../assets/images/JKUAT.png';
+import logo2 from  '../assets/images/logo2.png';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const LandingPage = () => (
@@ -50,7 +53,7 @@ const LandingPage = () => (
     
     {/* slider section */}
     <section id="home" className="slider_section">
-      <div id="customCarousel1" className="carousel slide" data-ride="carousel">
+    <div id="customCarousel1" className="carousel slide" data-ride="carousel" data-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="container">
@@ -61,7 +64,7 @@ const LandingPage = () => (
                       TekRafiki
                     </h1>
                     <p>
-                      TekRafiki aims to support the implementation of the new syllabus in the Department of Computing. It involves leveraging LLMs to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
+                      TekRafiki aims to support the implementation of the new syllabus in the Department of Computing.
                     </p>
                     <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
                   </div>
@@ -79,9 +82,6 @@ const LandingPage = () => (
               <div className="row">
                 <div className="col-md-6">
                   <div className="detail-box">
-                    <h1>
-                      TekRafiki
-                    </h1>
                     <p>
                       A robust AI-driven platform that streamlines curriculum design processes and enhances educational content.
                     </p>
@@ -101,9 +101,6 @@ const LandingPage = () => (
               <div className="row">
                 <div className="col-md-6">
                   <div className="detail-box">
-                    <h1>
-                      TekRafiki
-                    </h1>
                     <p>
                       Improved alignment of the computing syllabus with the current technological trends and industry standards.
                     </p>
@@ -136,7 +133,7 @@ const LandingPage = () => (
             About <span>Us</span>
           </h2>
           <p>
-            A robust AI-driven platform that streamlines curriculum design processes and enhances educational content
+            A robust AI-driven platform that streamlines curriculum design processes and enhances educational content.
           </p>
         </div>
         <div className="row">
@@ -151,7 +148,7 @@ const LandingPage = () => (
                 We Are TekRafiki
               </h3>
               <p>
-                The project aims to support the implementation of the new syllabus in the Department of Computing. It involves leveraging LLMs to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
+                The project aims to support the implementation of the new syllabus in the Department of Computing. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
               </p>
             </div>
           </div>
@@ -286,37 +283,20 @@ const LandingPage = () => (
     <section className="info_section layout_padding2">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-lg-3 info_col">
-          </div>
-          <div className="col-md-6 col-lg-3 info_col">
+          <div className="col-md-3 info_col left">
             <div className="info_detail">
-              <h4>
-                Info
-              </h4>
-              <p>
-                Enhanced student engagement and learning outcomes through personalized learning support and interactive content.
-              </p>
+            <img src={jhub} alt="" />
             </div>
           </div>
-          <div className="col-md-6 col-lg-2 mx-auto info_col">
-            <div className="info_link_box">
-              <h4>
-                Links
-              </h4>
-              <div className="info_links">
-                <a className="active" href="home">
-                  Home
-                </a>
-                <a className="" href="about">
-                  About
-                </a>
-                <a className="" href="#team">
-                  Team
-                </a>
-              </div>
+          <div className="col-md-3 info_col">
+            <div className="info_detail">
+            <img src={logo2} alt="" />
             </div>
           </div>
-          <div className="col-md-6 col-lg-3 info_col">
+          <div className="col-md-3 info_col right">
+            <div className="info_detail">
+            <img src={jkuat} alt="" />
+            </div>
           </div>
         </div>
       </div>

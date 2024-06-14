@@ -54,7 +54,7 @@ body {
 }
 
 .heading_container p {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -135,12 +135,15 @@ a:focus {
 }
 
 .header_section {
-  padding: 15px 0;
+  display: flex;
+  justify-content: space-between; /* Distribute space between child elements */
+  align-items: center;
+  padding: 15px 30px;
 }
 
 .header_section .container-fluid {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 55px;
+  padding-left: 55px;
 }
 
 .navbar-brand span {
@@ -150,7 +153,7 @@ a:focus {
 }
 
 .custom_nav-container {
-  padding: 0;
+  padding: 10px;
 }
 
 .custom_nav-container .navbar-nav {
@@ -381,7 +384,7 @@ button:hover {
 }
 
 .slider_section .detail-box h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -390,7 +393,7 @@ button:hover {
 
 .slider_section .detail-box p {
   color: #fefefe;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .slider_section .detail-box .btn-box {
@@ -619,6 +622,9 @@ button:hover {
 .about_section .img-box img {
   max-width: 100%;
 }
+.about_section .heading_container.heading_center p{
+font-size: 17px;
+}
 
 .about_section .detail-box h3 {
   font-weight: bold;
@@ -626,6 +632,7 @@ button:hover {
 
 .about_section .detail-box p {
   margin-top: 15px;
+  font-size: 17px;
 }
 
 .about_section .detail-box a {
@@ -895,17 +902,37 @@ button:hover {
 /* client section end */
 .info_section {
   background-color: #00204a;
+  display: flex;
+  justify-content: space-between;
   color: #ffffff;
-  padding: 45px 0 15px 0;
+  padding: 10px 20px 15px 20px;
+  align-items: center;
 }
-
+.info_detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .info_section h4 {
   font-weight: 600;
   margin-bottom: 20px;
 }
-
+.info_detail img{
+  max-width: 100%;
+  height: auto;
+}
+.info_col {
+  flex: 1; /* Flex-grow to take equal space */
+  text-align: center; /* Center the images */
+}
+.info_col.left, .info_col.right {
+  flex: 0 0 auto; /* Prevent growing and shrinking */
+}
 .info_section .info_col {
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .info_section .info_contact .contact_link_box {
