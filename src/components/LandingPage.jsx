@@ -238,7 +238,7 @@ const LandingPage = () => (
                     Nimrod Mutisya
                   </h5>
                   <p>
-                    Product Manager
+                    Backend Developer
                   </p>
                 </div>
               </div>

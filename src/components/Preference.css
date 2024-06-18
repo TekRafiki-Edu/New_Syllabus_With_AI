@@ -1,30 +1,21 @@
-/* Preferences.css */
-
 body {
+  background-color: #14046d; /* Set the background color of the entire webpage */
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #001f3f;
-  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
 .preference-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #003366;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
+  color: #333;
 }
 
 .question {
@@ -32,15 +23,13 @@ form {
 }
 
 .question p {
-  margin-bottom: 10px;
-  font-size: 18px;
+  font-weight: bold;
 }
 
 label {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin: 5px 0;
 }
 
 input[type="radio"],
@@ -50,20 +39,24 @@ input[type="checkbox"] {
 
 .button-container {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  justify-content: space-between;
 }
 
 button {
-  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #ffffff;
-  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
