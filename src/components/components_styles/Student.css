@@ -1,0 +1,349 @@
+/* Student.css */
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw; 
+}
+
+.sidebar {
+    background-color: #222;
+    color: #fff;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.logo-text {
+    margin-left: 10px;
+}
+
+.sidebar-item {
+    margin-bottom: 15px;
+}
+
+.sidebar-item button {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar-item button:hover {
+    background-color: #444;
+}
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.main-content-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.main-content-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-initials {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px;
+}
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+.settings-sidebar {
+    width: 150px; /* Width of the sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.settings-button {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+    background-color: #444; /* Slightly lighter dark color on hover */
+}
+
+.settings-form {
+    flex-grow: 1;
+    margin-left: 20px;
+    width: calc(50% - 10px); /* Set form width */
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background color with transparency */
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #222; /* Dark background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 800px; /* Increased width for layout purposes */
+    color: #fff;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    align-self: flex-start; /* Align close button to the start of the modal content */
+}
+
+.close-button:hover {
+    color: #ccc; /* Lighter color on hover */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin for more spacing between form groups */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin bottom for more spacing between label and input */
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #555;
+}
+
+form input[type="file"] {
+    margin-bottom: 20px;
+}
+/* Add styles for personalization section */
+.personalization-section {
+    margin-bottom: 20px;
+}
+
+.personalization-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.theme-selector,
+.notification-toggle {
+    margin-bottom: 15px;
+}
+
+.theme-selector label,
+.notification-toggle label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.theme-selector select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.notification-toggle input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+.dropdown-item {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #444;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close-button:hover {
+    color: #ccc;
+}
+
+.profile-image-container {
+    position: relative;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-image-placeholder {
+    background-color: #ccc;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="tel"] {
+    -moz-appearance: textfield;
+}
