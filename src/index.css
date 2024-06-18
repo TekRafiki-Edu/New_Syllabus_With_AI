@@ -25,18 +25,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
-  background-color: #242424;
-}
-
-#root {
-  height: 100%;
-  width: 100%;
 }
 
 h1 {

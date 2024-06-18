@@ -1,0 +1,54 @@
+.student-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #120777;
+}
+
+.student-signup-content {
+  background-color: white;
+  padding: 40px;
+  width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-signup-content h2 {
+  margin-bottom: 20px;
+}
+
+.student-signup-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-container button:first-child {
+  background-color: #ccc
+  
+  }
+
+.button-container button:last-child {
+  background-color: #ed3bf3;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}

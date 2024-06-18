@@ -1,0 +1,61 @@
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #150763;
+}
+
+.homepage-content {
+  background: white;
+  padding: 30px;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  text-align: center;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.radio-container label {
+  margin-right: 10px;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 30px;
+  margin-top: 20px;
+ }
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.button-container {
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+}
+
+.login-prompt {
+  margin-top: 10px;
+}
