@@ -1,12 +1,10 @@
-// Preferences.js
-
 import React from 'react';
-import './Preference.css'; 
+import './Preference.css';
 
 const Preference = () => {
   return (
     <div className="preference-container">
-      <h2>Student Preference</h2>
+      <h2>Student Preferences</h2>
       <form>
         <div className="question">
           <p>How often would you like to receive feedback on your progress?</p>
@@ -168,9 +166,8 @@ const Preference = () => {
           </label>
         </div>
 
-        {/* Submit button */}
         <div className="button-container">
-          <button type="submit">Save Preference</button>
+          <button type="submit">Save Preferences</button>
         </div>
       </form>
     </div>

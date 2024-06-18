@@ -25,7 +25,7 @@ const StudentSignUp = () => {
     ) {
       setErrorMessage('Please fill in all required fields.');
     } else {
-      navigate('/preference');
+      navigate('/Preference');
     }
   };
 

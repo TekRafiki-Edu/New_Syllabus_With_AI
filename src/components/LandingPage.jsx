@@ -193,7 +193,7 @@ const LandingPage = () => (
                     Teresiah Njeri
                   </h5>
                   <p>
-                    Project Manager
+                    Project Manager/Front-end Developer
                   </p>
                 </div>
               </div>
@@ -208,7 +208,7 @@ const LandingPage = () => (
                     Vanessa Kalondu
                   </h5>
                   <p>
-                    Front-end developer
+                    UI/UX designer
                   </p>
                 </div>
               </div>
@@ -223,7 +223,7 @@ const LandingPage = () => (
                     Viona Njenga
                   </h5>
                   <p>
-                    Back-end Developer
+                    UI/UX designer
                   </p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ const LandingPage = () => (
                     Joel Ng'ang'a
                   </h5>
                   <p>
-                    Web developer
+                    Front-end Developer
                   </p>
                 </div>
               </div>
