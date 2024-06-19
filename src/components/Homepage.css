@@ -3,26 +3,27 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #150763;
+  background-color: #150a74;
 }
 
 .homepage-content {
-  background: white;
-  padding: 30px;
-  border-radius: 9px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 450px;
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .radio-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-.radio-container label {
-  margin-right: 10px;
+.radio-container input[type='radio'] {
+  margin: 0 0.5rem;
 }
 
 .password-container {
@@ -32,30 +33,32 @@
 }
 
 .password-container input {
-  width: 100%;
-  padding-right: 30px;
-  margin-top: 20px;
- }
+  flex-grow: 1;
+}
 
 .toggle-password {
-  position: absolute;
-  right: 10px;
   cursor: pointer;
-  margin-top: 20px;
-}
-.password-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.button-container {
-  margin-top: 10px;
+  margin-left: -25px;
 }
 
 .error-message {
   color: red;
+  margin-top: 1rem;
+}
+
+.button-container {
+  margin-top: 1rem;
 }
 
 .login-prompt {
-  margin-top: 10px;
+  margin-top: 1.5rem;
+}
+
+.login-prompt a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
 }

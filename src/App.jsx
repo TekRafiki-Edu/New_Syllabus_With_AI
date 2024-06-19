@@ -5,7 +5,10 @@ import Homepage from './components/Homepage';
 import StudentSignUp from './components/StudentSignUp'; 
 import LecturerSignUp from './components/LecturerSignUp';
 import Preference from './components/Preference';
-import StudentProfile from './components/StudentProfile';
+import StudentLogin from './components/StudentLogin';
+import LecturerLogin from './components/LecturerLogin';
+import ForgotPassword from './components/ForgotPassword';
+
 
 
 
@@ -17,7 +20,10 @@ const App = () => (
       <Route path="/student-signup" element={<StudentSignUp />} />
       <Route path="/lecturer-signup" element={<LecturerSignUp />} />
       <Route path="/preference" element={<Preference />} />
-      <Route path="/student-profile" element={<StudentProfile />} />
+      <Route path="/student-login" element={<StudentLogin />} />
+      <Route path="/lecturer-login" element={<LecturerLogin />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+   
    
     </Routes>
   </Router>

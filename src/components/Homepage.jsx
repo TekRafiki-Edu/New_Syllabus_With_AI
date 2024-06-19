@@ -133,7 +133,9 @@ const Homepage = () => {
           <button onClick={handleSignUp}>Sign Up</button>
         </div>
         <p className="login-prompt">
-          Already have an account? <a href="/login">Login here</a>.
+          Already have an account?{' '}
+          <a href="/student-login">Student Login</a> or{' '}
+          <a href="/lecturer-login">Lecturer Login</a>.
         </p>
       </div>
     </div>
