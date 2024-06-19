@@ -1,7 +1,7 @@
 // src/components/Lecturer.jsx
 import React, { useState } from 'react';
 import './components_styles/Lecturer.css';
-import logo from '../assets/Images/LOGO1.png';
+import logo from '.public/logo2.png';
 
 const Lecturer = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);

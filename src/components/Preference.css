@@ -12,45 +12,53 @@
 }
 
 .question p {
-  margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
+.options {
+  margin-top: 5px; /* Adjust vertical spacing between options */
 }
 
-.input-container input[type="checkbox"],
-.input-container input[type="radio"] {
-  margin-right: 10px;
+.options label {
+  display: block; /* Display options vertically */
+}
+
+.options input[type="checkbox"],
+.options input[type="radio"] {
+  margin-right: 5px;
 }
 
 .button-container {
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button,
+.done-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  width: 150px; /* Set a fixed width for consistency */
 }
 
 .back-button {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 8px 20px;
-  background-color: #ddd;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
+  background-color: #007bff; /* Blue color */
+  color: white;
 }
 
 .done-button {
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 4px;
+  background-color: #074a85; /* Grey color */
   color: white;
-  cursor: pointer;
 }
 
+.back-button:hover,
 .done-button:hover {
-  background-color: #45a049;
+  opacity: 0.8; /* Reduce opacity on hover for visual feedback */
 }

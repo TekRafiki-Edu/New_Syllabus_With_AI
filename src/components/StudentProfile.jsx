@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './components_styles/Student.css';
-import logo from '../assets/Images/LOGO1.png';
+import './components_styles/StudentProfile.css';
+import logo from '../assets/images/LOGO1_temp.png';
 
-const Student = () => {
+
+const StudentProfile = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
@@ -201,5 +202,5 @@ const Student = () => {
     );
 };
 
-export default Student;
+export default StudentProfile;
 

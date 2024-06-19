@@ -5,6 +5,9 @@ import Homepage from './components/Homepage';
 import StudentSignUp from './components/StudentSignUp'; 
 import LecturerSignUp from './components/LecturerSignUp';
 import Preference from './components/Preference';
+import StudentProfile from './components/StudentProfile';
+
+
 
 const App = () => (
   <Router>
@@ -14,6 +17,8 @@ const App = () => (
       <Route path="/student-signup" element={<StudentSignUp />} />
       <Route path="/lecturer-signup" element={<LecturerSignUp />} />
       <Route path="/preference" element={<Preference />} />
+      <Route path="/student-profile" element={<StudentProfile />} />
+   
     </Routes>
   </Router>
 );

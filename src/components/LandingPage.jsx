@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../js/custom.js'; // Import custom JS
-import logo from '../assets/images/LOGO1.png';
+import logo from '../assets/images/logo2.png';
 import sliderImg from '../assets/images/slider-img.png';
 import heroBg from '../assets/images/hero-bg.png';
 import jhub from  '../assets/images/JHUB Africa.png';
