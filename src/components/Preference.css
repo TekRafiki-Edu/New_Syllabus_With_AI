@@ -1,3 +1,6 @@
+.preference-body{
+  background-color: rgb(5, 7, 114);
+}
 .preference-page {
   max-width: 800px;
   margin: auto;
@@ -17,16 +20,23 @@
 }
 
 .options {
+  display: inline-block;
+  align-items: center;
   margin-top: 5px; /* Adjust vertical spacing between options */
 }
 
 .options label {
-  display: block; /* Display options vertically */
+  display: inline-flex; /* Display options vertically */
+    font-size: 14px; /* Adjust label font size if necessary */
+    margin-bottom: 0; /* Optional: Remove default margin-bottom of label */
 }
 
 .options input[type="checkbox"],
 .options input[type="radio"] {
-  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px; /* Add space between checkbox/radio and label */
+  flex: 0 0 auto;
 }
 
 .button-container {
@@ -54,9 +64,13 @@
 }
 
 .done-button {
-  background-color: #074a85; /* Grey color */
-  color: white;
+  background-color: #333; /* Dark background color */
+  color: white; /* White text color */
+  padding: 5px 10px; /* Adjust padding to make the button smaller or larger */
+  border: none; /* Remove border if not needed */
+  border-radius: 5px; /* Optional: Add rounded corners */
 }
+
 
 .back-button:hover,
 .done-button:hover {

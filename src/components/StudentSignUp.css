@@ -45,8 +45,9 @@
   }
 
 .button-container button:last-child {
-  background-color: #ed3bf3;
+  background-color: #141414;
   color: white;
+  
 }
 
 .error-message {

@@ -15,6 +15,7 @@ const Preference = () => {
   };
 
   return (
+    <div className="preference-body">
     <div className="preference-page">
       <h2>Student Preferences</h2>
       <form onSubmit={handleSubmit}>
@@ -233,6 +234,7 @@ const Preference = () => {
           <button type="submit" className="done-button">Done</button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

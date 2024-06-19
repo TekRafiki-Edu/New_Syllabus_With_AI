@@ -73,38 +73,43 @@ const Homepage = () => {
         </div>
         
         {role === 'student' && (
-          <input
-            type="text"
-            placeholder="Enter your registration number *"
-            value={registrationNumber}
-            onChange={(e) => {
-              setRegistrationNumber(e.target.value);
-              setErrorMessage('');
-            }}
-          />
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Enter your registration number *"
+              value={registrationNumber}
+              onChange={(e) => {
+                setRegistrationNumber(e.target.value);
+                setErrorMessage('');
+              }}
+            />
+          </div>
         )}
         {role === 'lecturer' && (
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Enter your employee ID *"
+              value={employeeId}
+              onChange={(e) => {
+                setEmployeeId(e.target.value);
+                setErrorMessage('');
+              }}
+            />
+          </div>
+        )}
+        <div className="form-group">
           <input
-            type="text"
-            placeholder="Enter your employee ID *"
-            value={employeeId}
+            type="email"
+            placeholder="Enter your email *"
+            value={email}
             onChange={(e) => {
-              setEmployeeId(e.target.value);
+              setEmail(e.target.value);
               setErrorMessage('');
             }}
           />
-        )}
-        <input
-          type="email"
-          placeholder="Enter your email *"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <br />
-        <div className="password-container">
+        </div>
+        <div className="form-group password-container">
           <input
             type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password *"
@@ -115,8 +120,7 @@ const Homepage = () => {
             {showPassword ? '🙈' : '👁️'}
           </span>
         </div>
-        <br />
-        <div className="password-container">
+        <div className="form-group password-container">
           <input
             type={showPassword ? 'text' : 'password'}
             placeholder="Confirm your password *"
@@ -127,7 +131,6 @@ const Homepage = () => {
             {showPassword ? '🙈' : '👁️'}
           </span>
         </div>
-        <br />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <div className="button-container">
           <button onClick={handleSignUp}>Sign Up</button>

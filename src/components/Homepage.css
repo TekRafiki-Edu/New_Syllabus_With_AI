@@ -14,6 +14,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 1rem;
 }
 
 .radio-container {
@@ -61,4 +62,9 @@
 
 .login-prompt a:hover {
   text-decoration: underline;
+}
+
+/* Added for form field spacing */
+.form-group {
+  margin-bottom: 1rem;
 }

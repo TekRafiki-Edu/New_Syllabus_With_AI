@@ -1,9 +1,9 @@
 // src/components/Lecturer.jsx
 import React, { useState } from 'react';
 import './components_styles/Lecturer.css';
-import logo from '.public/logo2.png';
+import logo from '../assets/images/LOGO1_temp.png';
 
-const Lecturer = () => {
+const LecturerProfile = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
@@ -178,5 +178,5 @@ const Lecturer = () => {
   );
 };
 
-export default Lecturer;
+export default LecturerProfile;
 
