@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LecturerLogin.css';
+import './components_styles/LecturerLogin.css';
 
 const LecturerLogin = () => {
   const [employeeId, setEmployeeId] = useState('');

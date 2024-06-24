@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './components_styles/StudentProfile.css';
-import logo from '../assets/images/LOGO1_temp.png';
+import './components_styles/LecturerDashboard.css';
+import leclogo from '../assets/images/lec-logo.png';
 
-
-const StudentProfile = () => {
-    const [isDropdownOpen, setDropdownOpen] = useState(false);
+const LecturerDashboard = () => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
     const [selectedSection, setSelectedSection] = useState("Personalization");
@@ -69,77 +68,55 @@ const StudentProfile = () => {
     };
 
     return (
-        <div className={`container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
-            <div className="sidebar">
-                {/* Logo and text */}
-                <div className="logo-container">
-                    <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
-                    <span className="logo-text">TekRafiki</span>
+        <div className="lecturer-container">
+            <div className="lecturer-header">
+                <button className="lecturer-header-button">Units</button>
+                <div className="lecturer-logo-container">
+                    <img src={leclogo} alt="Logo" className="lecturer-logo" />
+                    <span className="lecturer-logo-text">TekRafiki</span>
                 </div>
-                
-                {/* Sidebar items */}
-                <div className="sidebar-item">
-                    <button>Units</button>
-                </div>
-                <div className="sidebar-item">
-                    <button>Preferences</button>
-                </div>
-                <div className="sidebar-item">
-                    <button>Chatbot</button>
-                </div>
-            </div>
-            
-            <div className="main-content">
-                <header className="header">
-                    <div className="profile-container" onClick={toggleDropdown}>
-                        <div className="profile-initials">{userInitials}</div>
-                        {isDropdownOpen && (
-                            <div className="dropdown-menu">
-                                <button className="dropdown-item" onClick={openProfileModal}>Profile</button>
-                                <button className="dropdown-item" onClick={openSettingsModal}>Settings</button>
-                                <button className="dropdown-item">Log Out</button>
-                            </div>
-                        )}
-                    </div>
-                </header>
-                {/* Main Content Goes Here */}
-                <div>
-                <div>
-                    <img src={logo} alt="" style={{ width: 'auto', height: '100' }} />
-                    <p></p>
-                </div>
+                <div className="lecturer-profile-container" onClick={toggleDropdown}>
+                    <span className="lecturer-profile-initials">{userInitials}</span>
+                    {isDropdownOpen && (
+                        <div className="lec-dropdown-menu">
+                            <button className="lec-dropdown-item" onClick={openProfileModal}>Profile</button>
+                            <button className="lec-dropdown-item" onClick={openSettingsModal}>Settings</button>
+                            <button className="lec-dropdown-item">Logout</button>
+                        </div>
+                    )}
                 </div>
             </div>
 
+            {/* Profile Modal */}
             {isProfileModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close-button" onClick={closeProfileModal}>&times;</span>
-                        <div className="profile-image-container">
+                <div id="lec-modal">
+                    <div id="lec-modal-content">
+                        <span id="lec-close-button" onClick={closeProfileModal}>&times;</span>
+                        <div id="lec-profile-image-container">
                             {profileImagePreview && (
-                                <img src={profileImagePreview} alt="Profile" className="profile-image" />
+                                <img src={profileImagePreview} alt="Profile" id="lec-profile-image" />
                             )}
                             {!profileImagePreview && (
-                                <div className="profile-image-placeholder">No Image</div>
+                                <div id="lec-profile-image-placeholder">No Image</div>
                             )}
                             <input type="file" onChange={handleImageChange} />
                         </div>
-                        <div className="profile-form">
+                        <div id="lec-profile-form">
                             <h2>Profile</h2>
                             <form>
-                                <div className="form-group">
+                                <div id="lec-form-group">
                                     <label>Name:</label>
                                     <input type="text" value={userName} onChange={handleNameChange} />
                                 </div>
-                                <div className="form-group">
+                                <div id="lec-form-group">
                                     <label>Telephone Number:</label>
                                     <input type="tel" pattern="[0-9]*" maxLength="10" onChange={handleTelephoneChange} />
                                 </div>
-                                <div className="form-group">
-                                    <label>Registration Number:</label>
+                                <div id="lec-form-group">
+                                    <label>Employee ID:</label>
                                     <input type="text" />
                                 </div>
-                                <div className="form-group">
+                                <div id="lec-form-group">
                                     <label>Department:</label>
                                     <input type="text" />
                                 </div>
@@ -150,46 +127,46 @@ const StudentProfile = () => {
                 </div>
             )}
 
+            {/* Settings Modal */}
             {isSettingsModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close-button" onClick={closeSettingsModal}>&times;</span>
-                        <div className="settings-sidebar">
+                <div id="lec-modal">
+                    <div id="lec-modal-content">
+                        <span id="lec-close-button" onClick={closeSettingsModal}>&times;</span>
+                        <div id="lec-settings-sidebar">
                             <button className={`settings-button ${selectedSection === "Personalization" ? "active" : ""}`} onClick={() => setSelectedSection("Personalization")}>Personalization</button>
                             <button className={`settings-button ${selectedSection === "Security" ? "active" : ""}`} onClick={() => setSelectedSection("Security")}>Security</button>
                             <button className={`settings-button ${selectedSection === "Account" ? "active" : ""}`} onClick={() => setSelectedSection("Account")}>Account</button>
                         </div>
-                        <div className="settings-form">
+                        <div id="lec-settings-form">
                             {/* Content for personalization, security, and account goes here */}
                             {selectedSection === "Personalization" && (
-                                <div className="personalization-section">
+                                <div id="lec-personalization-section">
                                     <h2>Personalization</h2>
-                                    <div className="theme-selection">
+                                    <div id="lec-theme-selection">
                                         <label>Theme:</label>
                                         <select value={theme} onChange={handleThemeChange}>
                                             <option value="dark">Dark</option>
                                             <option value="light">Light</option>
                                         </select>
                                     </div>
-                                    <div className="notification-toggle">
+                                    <div id="lec-notification-toggle">
                                         <label>Enable Notifications:</label>
                                         <input type="checkbox" />
                                     </div>
                                 </div>
                             )}
-                              {selectedSection === "Security" && (
-                                  <div>
-                                      <h2>Security</h2>
-                                      <div className="form-group">
-                                          <label>Password:</label>
-                                          <input type="password" />
-                                      </div>
-                                      <button type="button">Change Password</button>
-                                  </div>
-                              )}
-                          
+                            {selectedSection === "Security" && (
+                                <div>
+                                    <h2>Security</h2>
+                                    <div id="lec-form-group">
+                                        <label>Password:</label>
+                                        <input type="password" />
+                                    </div>
+                                    <button type="button">Change Password</button>
+                                </div>
+                            )}
                             {selectedSection === "Account" && (
-                                <div className="account-section">
+                                <div id="lec-account-section">
                                     <h2>Account</h2>
                                     {/* Account settings go here */}
                                 </div>
@@ -202,5 +179,4 @@ const StudentProfile = () => {
     );
 };
 
-export default StudentProfile;
-
+export default LecturerDashboard;
