@@ -1,10 +1,10 @@
-// src/components/Lecturer.jsx
 import React, { useState } from 'react';
-import './components_styles/Lecturer.css';
+import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/LOGO1_temp.png';
 
-const LecturerProfile = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+const StudentProfile = () => {
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
     const [selectedSection, setSelectedSection] = useState("Personalization");
@@ -67,28 +67,51 @@ const LecturerProfile = () => {
     const handleThemeChange = (e) => {
         setTheme(e.target.value);
     };
-  return (
-    <div className="lecturer-container">
-      <div className="header">
-        <button className="header-button">Units</button>
-        <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo" />
-          <span className="logo-text">TekRafiki</span>
-        </div>
-        <div className="profile-container" onClick={toggleDropdown}>
-          <span className="profile-initials">{userInitials}</span>
-          {isDropdownOpen && (
-            <div className="dropdown-menu">
-              <button className="dropdown-item" onClick={openProfileModal}>Profile</button>
-              <button className="dropdown-item" onClick={openSettingsModal}>Settings</button>
-              <button className="dropdown-item">Logout</button>
-            </div>
-          )}
-        </div>
-      </div>
 
-      {/* Profile Modal */}
-      {isProfileModalOpen && (
+    return (
+        <div className={`container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+            <div className="sidebar">
+                {/* Logo and text */}
+                <div className="logo-container">
+                    <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
+                    <span className="logo-text">TekRafiki</span>
+                </div>
+                
+                {/* Sidebar items */}
+                <div className="sidebar-item">
+                    <button>Units</button>
+                </div>
+                <div className="sidebar-item">
+                    <button>Preferences</button>
+                </div>
+                <div className="sidebar-item">
+                    <button>Chatbot</button>
+                </div>
+            </div>
+            
+            <div className="main-content">
+                <header className="header">
+                    <div className="profile-container" onClick={toggleDropdown}>
+                        <div className="profile-initials">{userInitials}</div>
+                        {isDropdownOpen && (
+                            <div className="dropdown-menu">
+                                <button className="dropdown-item" onClick={openProfileModal}>Profile</button>
+                                <button className="dropdown-item" onClick={openSettingsModal}>Settings</button>
+                                <button className="dropdown-item">Log Out</button>
+                            </div>
+                        )}
+                    </div>
+                </header>
+                {/* Main Content Goes Here */}
+                <div>
+                <div>
+                    <img src={logo} alt="" style={{ width: 'auto', height: '100' }} />
+                    <p></p>
+                </div>
+                </div>
+            </div>
+
+            {isProfileModalOpen && (
                 <div className="modal">
                     <div className="modal-content">
                         <span className="close-button" onClick={closeProfileModal}>&times;</span>
@@ -113,7 +136,7 @@ const LecturerProfile = () => {
                                     <input type="tel" pattern="[0-9]*" maxLength="10" onChange={handleTelephoneChange} />
                                 </div>
                                 <div className="form-group">
-                                    <label>Employee ID:</label>
+                                    <label>Registration Number:</label>
                                     <input type="text" />
                                 </div>
                                 <div className="form-group">
@@ -126,7 +149,8 @@ const LecturerProfile = () => {
                     </div>
                 </div>
             )}
-      {isSettingsModalOpen && (
+
+            {isSettingsModalOpen && (
                 <div className="modal">
                     <div className="modal-content">
                         <span className="close-button" onClick={closeSettingsModal}>&times;</span>
@@ -174,9 +198,9 @@ const LecturerProfile = () => {
                     </div>
                 </div>
             )}
-    </div>
-  );
+        </div>
+    );
 };
 
-export default LecturerProfile;
+export default StudentProfile;
 
