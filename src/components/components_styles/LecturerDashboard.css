@@ -13,7 +13,7 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.header {
+.lecturer-header {
     display: flex;
     justify-content: space-between; /* Distribute space between items */
     align-items: center;
@@ -22,7 +22,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header-button {
+.lecturer-header-button {
     background-color: #646cff;
     color: #fff;
     border: none;
@@ -34,41 +34,47 @@
     margin-right: auto; /* Push the button to the left */
 }
 
+<<<<<<< HEAD:src/components/components_styles/Lecturer.css
 .header-button:hover {
    +              }
+=======
+.lecturer-header-button:hover {
+    background-color: #535bf2;
+}
+>>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821:src/components/components_styles/LecturerDashboard.css
 
-.logo-container {
+.lecturer-logo-container {
     display: flex;
     align-items: center;
     margin: 0 auto; /* Center the logo container */
 }
 
-.logo {
+.lecturer-logo{
     height: 40px;
     margin-right: 10px;
 }
 
-.logo-text {
+.lecturer-logo-text {
     font-size: 1.5em;
     font-weight: bold;
     color: #fff;
 }
 
-.profile-container {
+.lecturer-profile-container {
     position: relative;
     cursor: pointer;
     margin-left: auto; /* Push the profile container to the right */
     
 }
 
-.profile-initials {
+.lecturer-profile-initials {
     background-color: #555;
     border-radius: 50%;
     padding: 10px;
     color: #fff;
 }
 
-.dropdown-menu {
+.lecturer-dropdown-menu {
     position: absolute;
     top: 100%;
     right: 0;
@@ -82,19 +88,19 @@
 }
 
 
-.dropdown-item {
+.lecturer-dropdown-item {
     padding: 8px 16px;
     cursor: pointer;
     display: block;
     color: #333;
 }
 
-.dropdown-item:hover {
+.lecturer-dropdown-item:hover {
     background-color: #ddd;
 }
 
 
-.logo-container {
+.lecturer-logo-container {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -143,7 +149,7 @@
 }
 
 
-.header {
+.lecturer-header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -152,14 +158,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.profile-container {
+.lec-profile-container {
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.profile-initials {
+.lec-profile-initials {
     background-color: #007bff;
     color: #fff;
     border-radius: 50%;
@@ -220,7 +226,7 @@
     width: calc(50% - 10px); /* Set form width */
 }
 
-.modal {
+.lec-modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,7 +239,7 @@
     z-index: 1000;
 }
 
-.modal-content {
+.lec-modal-content {
     background-color: #222; /* Dark background color */
     padding: 20px;
     border-radius: 8px;
@@ -245,18 +251,18 @@
     align-items: center; /* Center items horizontally */
 }
 
-.close-button {
+.lec-close-button {
     font-size: 24px;
     cursor: pointer;
     color: #fff;
     align-self: flex-start; /* Align close button to the start of the modal content */
 }
 
-.close-button:hover {
+.lec-close-button:hover{
     color: #ccc; /* Lighter color on hover */
 }
 
-.form-group {
+.lec-close-button {
     margin-bottom: 20px; /* Increased margin for more spacing between form groups */
 }
 
@@ -353,29 +359,29 @@ form input[type="file"] {
     align-items: flex-start;
 }
 
-.close-button {
+.lec-close-button {
     font-size: 24px;
     cursor: pointer;
     color: #fff;
 }
 
-.close-button:hover {
+.lec-close-button:hover {
     color: #ccc;
 }
 
-.profile-image-container {
+.lec-profile-image-container {
     position: relative;
     margin-right: 20px;
 }
 
-.profile-image {
+.lec-profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.profile-image-placeholder {
+.lec-profile-image-placeholder {
     background-color: #ccc;
     width: 150px;
     height: 150px;
@@ -388,12 +394,12 @@ form input[type="file"] {
     color: #666;
 }
 
-.profile-form {
+.lec-profile-form {
     display: flex;
     flex-direction: column;
 }
 
-.form-group {
+.lec-form-group {
     margin-bottom: 15px;
 }
 

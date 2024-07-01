@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LecturerSignUp.css'; 
+import './components_styles/LecturerSignUp.css'; 
 
 const LecturerSignUp = () => {
   const navigate = useNavigate();

@@ -85,7 +85,11 @@ const LandingPage = () => (
                     <p>
                       A robust AI-driven platform that streamlines curriculum design processes and enhances educational content.
                     </p>
+<<<<<<< HEAD
                     <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
+=======
+                    <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link>  {/* Add button here */}
+>>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -104,7 +108,11 @@ const LandingPage = () => (
                     <p>
                       Improved alignment of the computing syllabus with the current technological trends and industry standards.
                     </p>
+<<<<<<< HEAD
                     <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
+=======
+                    <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link>  {/* Add button here */}
+>>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -290,7 +298,7 @@ const LandingPage = () => (
           </div>
           <div className="col-md-3 info_col">
             <div className="info_detail">
-            <img src={logo2} alt="" />
+              <img src={logo2} alt="" />
             </div>
           </div>
           <div className="col-md-3 info_col right">

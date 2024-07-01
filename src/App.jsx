@@ -24,8 +24,12 @@ const App = () => (
       <Route path="/lecturer-login" element={<LecturerLogin />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
     
+<<<<<<< HEAD
       
       
+=======
+   
+>>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821
    
     </Routes>
   </Router>

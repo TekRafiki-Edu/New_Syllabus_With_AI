@@ -1,5 +1,5 @@
 import React from 'react';
-import './Preference.css';
+import './components_styles/Preference.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const Preference = () => {
     // Handle form submission logic here
     console.log('Preferences saved');
     // Navigate to the Student Profile page
-    navigate('/student-profile');
+    navigate('/lecturer-dashboard');
   };
 
   return (
