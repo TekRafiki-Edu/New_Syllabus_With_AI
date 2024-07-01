@@ -25,8 +25,18 @@ const App = () => (
       <Route path="/student-login" element={<StudentLogin />} />
       <Route path="/lecturer-login" element={<LecturerLogin />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+<<<<<<< HEAD
       <Route path="/student-dashboard" element={<StudentDashboard />} />
       <Route path="/lecturer-dashboard" element={<LecturerDashboard />} />
+=======
+    
+<<<<<<< HEAD
+      
+      
+=======
+   
+>>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821
+>>>>>>> 9b4537f4ac1302c60b6ecb4564625a1e479c8fec
    
     </Routes>
   </Router>

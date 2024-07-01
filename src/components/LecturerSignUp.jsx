@@ -8,7 +8,7 @@ const LecturerSignUp = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate('/');
+    navigate('/');  
   };
 
   const handleSubmit = (e) => {
