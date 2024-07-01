@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './components_styles/StudentProfile.css';
+import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/LOGO1_temp.png';
 
 
