@@ -3,7 +3,7 @@ import './components_styles/LecturerDashboard.css';
 import leclogo from '../assets/images/lec-logo.png';
 
 const LecturerDashboard = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
     const [selectedSection, setSelectedSection] = useState("Personalization");
@@ -68,15 +68,15 @@ const LecturerDashboard = () => {
     };
 
     return (
-        <div className="lecturer-container">
-            <div className="lecturer-header">
-                <button className="lecturer-header-button">Units</button>
-                <div className="lecturer-logo-container">
-                    <img src={leclogo} alt="Logo" className="lecturer-logo" />
-                    <span className="lecturer-logo-text">TekRafiki</span>
+        <div className="lec-container">
+            <div className="lec-header">
+                <button className="lec-header-button">Units</button>
+                <div className="lec-logo-container">
+                    <img src={leclogo} alt="Logo" className="lec-logo" />
+                    <span className="lec-logo-text">TekRafiki_AI</span>
                 </div>
-                <div className="lecturer-profile-container" onClick={toggleDropdown}>
-                    <span className="lecturer-profile-initials">{userInitials}</span>
+                <div className="lec-profile-container" onClick={toggleDropdown}>
+                    <span className="lec-profile-initials">{userInitials}</span>
                     {isDropdownOpen && (
                         <div className="lec-dropdown-menu">
                             <button className="lec-dropdown-item" onClick={openProfileModal}>Profile</button>
@@ -86,7 +86,12 @@ const LecturerDashboard = () => {
                     )}
                 </div>
             </div>
-
+            {/* Main Content Area */}
+            <div className="lec-main-content">
+                {/* Replace this with your actual main content */}
+                <h1>Welcome to the Lecturer Dashboard</h1>
+                <p>Here is where the main content will appear.</p>
+            </div>
             {/* Profile Modal */}
             {isProfileModalOpen && (
                 <div id="lec-modal">
@@ -133,9 +138,9 @@ const LecturerDashboard = () => {
                     <div id="lec-modal-content">
                         <span id="lec-close-button" onClick={closeSettingsModal}>&times;</span>
                         <div id="lec-settings-sidebar">
-                            <button className={`settings-button ${selectedSection === "Personalization" ? "active" : ""}`} onClick={() => setSelectedSection("Personalization")}>Personalization</button>
-                            <button className={`settings-button ${selectedSection === "Security" ? "active" : ""}`} onClick={() => setSelectedSection("Security")}>Security</button>
-                            <button className={`settings-button ${selectedSection === "Account" ? "active" : ""}`} onClick={() => setSelectedSection("Account")}>Account</button>
+                            <button className={`lec-settings-button ${selectedSection === "Personalization" ? "active" : ""}`} onClick={() => setSelectedSection("Personalization")}>Personalization</button>
+                            <button className={`lec-settings-button ${selectedSection === "Security" ? "active" : ""}`} onClick={() => setSelectedSection("Security")}>Security</button>
+                            <button className={`lec-settings-button ${selectedSection === "Account" ? "active" : ""}`} onClick={() => setSelectedSection("Account")}>Account</button>
                         </div>
                         <div id="lec-settings-form">
                             {/* Content for personalization, security, and account goes here */}

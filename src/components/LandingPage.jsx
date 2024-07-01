@@ -25,7 +25,7 @@ const LandingPage = () => (
         <nav className="navbar navbar-expand-lg custom_nav-container fixed-top">
           <a className="navbar-brand" href="index.html">
             <span>
-              TekRafiki
+              TekRafiki_AI
             </span>
           </a>
 
@@ -61,7 +61,7 @@ const LandingPage = () => (
                 <div className="col-md-6">
                   <div className="detail-box">
                     <h1>
-                      TekRafiki
+                      TekRafiki_AI
                     </h1>
                     <p>
                       TekRafiki aims to support the implementation of the new syllabus in the Department of Computing.
@@ -269,6 +269,21 @@ const LandingPage = () => (
                   </h5>
                   <p>
                     Backend developer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 col-sm-6">
+              <div className="box">
+                <div className="img-box">
+                  <img src="" className="img1" alt="" />
+                </div>
+                <div className="detail-box">
+                  <h5>
+                    Ernest Kiprop
+                  </h5>
+                  <p>
+                    Reasercher
                   </p>
                 </div>
               </div>

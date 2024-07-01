@@ -1,20 +1,29 @@
 /* Student.css */
-
-.container {
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.stu-container {
     display: flex;
     height: 100vh;
     width: 100vw; 
 }
 
-.sidebar {
+.stu-sidebar {
     background-color: #222;
     color: #fff;
     width: 200px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 }
 
-.logo-container {
+.stu-logo-container {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -25,15 +34,15 @@
     height: auto;
 }
 
-.logo-text {
+.stu-logo-text {
     margin-left: 10px;
 }
 
-.sidebar-item {
+.stu-sidebar-item {
     margin-bottom: 15px;
 }
 
-.sidebar-item button {
+.stu-sidebar-item button {
     width: 100%;
     padding: 10px;
     background: none;
@@ -43,15 +52,15 @@
     cursor: pointer;
 }
 
-.sidebar-item button:hover {
+.stu-sidebar-item button:hover {
     background-color: #444;
 }
-.main-content {
+.stu-main-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
-.main-content-body {
+.stu-main-content-body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +81,7 @@
 }
 
 
-.header {
+.stu-header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -81,14 +90,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.profile-container {
+.stu-profile-container {
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.profile-initials {
+.stu-profile-initials {
     background-color: #007bff;
     color: #fff;
     border-radius: 50%;
@@ -103,7 +112,7 @@
 }
 
 
-.dropdown-menu {
+.stu-dropdown-menu {
     position: absolute;
     top: 50px;
     left: 0;
@@ -114,20 +123,20 @@
     z-index: 1000;
     min-width: 150px;
 }
-.modal-title {
+.stu-modal-title {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center; /* Center the title */
 }
 
-.settings-sidebar {
+.stu-settings-sidebar {
     width: 150px; /* Width of the sidebar */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.settings-button {
+.stu-settings-button {
     width: 100%;
     padding: 10px;
     background: none;
@@ -137,17 +146,17 @@
     cursor: pointer;
 }
 
-.settings-button:hover {
+.stu-settings-button:hover {
     background-color: #444; /* Slightly lighter dark color on hover */
 }
 
-.settings-form {
+.stu-settings-form {
     flex-grow: 1;
     margin-left: 20px;
     width: calc(50% - 10px); /* Set form width */
 }
 
-.modal {
+.stu-modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,7 +169,7 @@
     z-index: 1000;
 }
 
-.modal-content {
+.stu-modal-content {
     background-color: #222; /* Dark background color */
     padding: 20px;
     border-radius: 8px;
@@ -172,18 +181,18 @@
     align-items: center; /* Center items horizontally */
 }
 
-.close-button {
+.stu-close-button {
     font-size: 24px;
     cursor: pointer;
     color: #fff;
     align-self: flex-start; /* Align close button to the start of the modal content */
 }
 
-.close-button:hover {
+.stu-close-button:hover {
     color: #ccc; /* Lighter color on hover */
 }
 
-.form-group {
+.stu-form-group {
     margin-bottom: 20px; /* Increased margin for more spacing between form groups */
 }
 
@@ -208,11 +217,11 @@ form input[type="file"] {
     margin-bottom: 20px;
 }
 /* Add styles for personalization section */
-.personalization-section {
+.stu-personalization-section {
     margin-bottom: 20px;
 }
 
-.personalization-section h3 {
+.stu-personalization-section h3 {
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -240,7 +249,7 @@ form input[type="file"] {
 }
 
 
-.dropdown-item {
+.stu-dropdown-item {
     padding: 10px 20px;
     width: 100%;
     text-align: left;
@@ -250,11 +259,11 @@ form input[type="file"] {
     color: #fff;
 }
 
-.dropdown-item:hover {
+.stu-dropdown-item:hover {
     background-color: #444;
 }
 
-.modal {
+.stu-modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,7 +276,7 @@ form input[type="file"] {
     z-index: 1000;
 }
 
-.modal-content {
+.stu-modal-content {
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
@@ -280,29 +289,29 @@ form input[type="file"] {
     align-items: flex-start;
 }
 
-.close-button {
+.stu-close-button {
     font-size: 24px;
     cursor: pointer;
     color: #fff;
 }
 
-.close-button:hover {
+.stu-close-button:hover {
     color: #ccc;
 }
 
-.profile-image-container {
+.stu-profile-image-container {
     position: relative;
     margin-right: 20px;
 }
 
-.profile-image {
+.stu-profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.profile-image-placeholder {
+.stu-profile-image-placeholder {
     background-color: #ccc;
     width: 150px;
     height: 150px;
@@ -315,12 +324,12 @@ form input[type="file"] {
     color: #666;
 }
 
-.profile-form {
+.stu-profile-form {
     display: flex;
     flex-direction: column;
 }
 
-.form-group {
+.stu-form-group {
     margin-bottom: 15px;
 }
 

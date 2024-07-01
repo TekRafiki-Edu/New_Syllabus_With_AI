@@ -11,9 +11,12 @@ const LecturerSignUp = () => {
     navigate('/');
   };
 
-  const handleSendRequest = () => {
-    // Implement logic to send access request to admin
-    console.log('Send Access Request clicked');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Signup saved');
+    // Navigate to the Student Profile page
+    navigate('/lecturer-dashboard');
   };
 
   return (
@@ -31,7 +34,7 @@ const LecturerSignUp = () => {
         </div>
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
-          <button onClick={handleSendRequest}>Send Access Request</button>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
       </div>
     </div>

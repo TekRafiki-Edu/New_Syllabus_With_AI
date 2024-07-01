@@ -8,6 +8,8 @@ import Preference from './components/Preference';
 import StudentLogin from './components/StudentLogin';
 import LecturerLogin from './components/LecturerLogin';
 import ForgotPassword from './components/ForgotPassword';
+import StudentDashboard from './components/StudentDashboard';
+import LecturerDashboard from './components/LecturerDashboard';
 
 
 
@@ -23,8 +25,8 @@ const App = () => (
       <Route path="/student-login" element={<StudentLogin />} />
       <Route path="/lecturer-login" element={<LecturerLogin />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-    
-   
+      <Route path="/student-dashboard" element={<StudentDashboard />} />
+      <Route path="/lecturer-dashboard" element={<LecturerDashboard />} />
    
     </Routes>
   </Router>

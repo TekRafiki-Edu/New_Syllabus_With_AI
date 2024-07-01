@@ -11,7 +11,7 @@ const Preference = () => {
     // Handle form submission logic here
     console.log('Preferences saved');
     // Navigate to the Student Profile page
-    navigate('/lecturer-dashboard');
+    navigate('/student-dashboard');
   };
 
   return (
