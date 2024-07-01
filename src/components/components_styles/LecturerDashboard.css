@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212; /* Dark background color */
-=======
-  b /* Student.css */
-
-.container {
-    display: flex;
-    height: 100vh;
-    width: 100vw; 
->>>>>>> 9b4537f4ac1302c60b6ecb4564625a1e479c8fec
 }
 
 /* Main content styles */
@@ -51,18 +42,9 @@ body {
     width: auto;
 }
 
-<<<<<<< HEAD
 .lec-header-button:hover {
-=======
-<<<<<<< HEAD:src/components/components_styles/Lecturer.css
-.header-button:hover {
-   +              }
-=======
-.lecturer-header-button:hover {
->>>>>>> 9b4537f4ac1302c60b6ecb4564625a1e479c8fec
     background-color: #535bf2;
 }
->>>>>>> a40a2fdc05885d33b1ab80535c5e80021fe7d821:src/components/components_styles/LecturerDashboard.css
 
 .lec-logo-container {
     display: flex;
@@ -152,7 +134,7 @@ body {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
-    color: #646cff;
+    color: white;
 }
 
 #lec-profile-image-container,

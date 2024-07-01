@@ -87,8 +87,6 @@ const LandingPage = () => (
                     </p>
 
                     <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
-                    <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link>  {/* Add button here */}
-
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -109,8 +107,6 @@ const LandingPage = () => (
                     </p>
 
                     <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link> {/* Add button here */}
-                    <Link to="/Homepage" className="btn btn-primary mt-4">Get Started</Link>  {/* Add button here */}
-
                   </div>
                 </div>
                 <div className="col-md-6">
