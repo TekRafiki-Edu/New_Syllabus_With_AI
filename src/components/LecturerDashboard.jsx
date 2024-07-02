@@ -86,12 +86,18 @@ const LecturerDashboard = () => {
                     )}
                 </div>
             </div>
-            {/* Main Content Area */}
-            <div className="lec-main-content">
-                {/* Replace this with your actual main content */}
-                <h1>Welcome to the Lecturer Dashboard</h1>
-                <p>Here is where the main content will appear.</p>
-            </div>
+            <main className="lec-main-content">
+                <div className="lec-left-section">
+                    {/* Left section content goes here */}
+                    <h2>Left Section</h2>
+                    <p>This is the left section of the main content.</p>
+                </div>
+                <div className="lec-right-section">
+                    {/* Right section content goes here */}
+                    <h2>Right Section</h2>
+                    <p>This is the right section of the main content.</p>
+                </div>
+            </main>
             {/* Profile Modal */}
             {isProfileModalOpen && (
                 <div id="lec-modal">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './components_styles/StudentDashboard.css';
-import logo from '../assets/images/LOGO1_temp.png';
+import logo from '../assets/images/logo2.png';
 
 
 const StudentProfile = () => {
@@ -73,7 +73,7 @@ const StudentProfile = () => {
             <div className="stu-sidebar">
                 {/* Logo and text */}
                 <div className="stu-logo-container">
-                    <img src="" alt="Logo" style={{ width: '50px', height: 'auto' }} />
+                    <img src= {logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
                     <span className="stu-logo-text">TekRafiki_AI</span>
                 </div>
                 
@@ -90,26 +90,40 @@ const StudentProfile = () => {
             </div>
             
             <div className="stu-main-content">
-                <header className="stu-header">
-                    <div className="stu-profile-container" onClick={toggleDropdown}>
-                        <div className="stu-profile-initials">{userInitials}</div>
-                        {isDropdownOpen && (
-                            <div className="stu-dropdown-menu">
-                                <button className="stu-dropdown-item" onClick={openProfileModal}>Profile</button>
-                                <button className="stu-dropdown-item" onClick={openSettingsModal}>Settings</button>
-                                <button className="stu-dropdown-item">Log Out</button>
-                            </div>
-                        )}
-                    </div>
-                </header>
-                {/* Main Content Goes Here */}
-                <div>
-                <div>
-                    <img src="" alt="" style={{ width: 'auto', height: '100' }} />
-                    <p></p>
+    <header className="stu-header">
+        <div className="stu-profile-container" onClick={toggleDropdown}>
+            <div className="stu-profile-initials">{userInitials}</div>
+            {isDropdownOpen && (
+                <div className="stu-dropdown-menu">
+                    <button className="stu-dropdown-item" onClick={openProfileModal}>Profile</button>
+                    <button className="stu-dropdown-item" onClick={openSettingsModal}>Settings</button>
+                    <button className="stu-dropdown-item">Log Out</button>
                 </div>
-                </div>
+            )}
+        </div>
+    </header>
+    <main className="stu-main-content-area">
+        <div className="stu-left-section">
+            <h4>Left section</h4>
+            {/* Left section content goes here */}
+            <div>
+                <img src={logo} alt="" style={{ width: 'auto', height: '100px' }} />
+                <p></p>
             </div>
+        </div>
+        <div className="stu-right-section">
+            <div className="stu-right-upper-section">
+                <h4>Right upper section</h4>
+                {/* Right-upper section content goes here */}
+            </div>
+            <div className="stu-right-lower-section">
+                <h4>right lower section</h4>
+                {/* Right-lower section content goes here */}
+            </div>
+            </div>
+                 </main>
+             </div>
+
 
             {isProfileModalOpen && (
                 <div className="stu-modal">

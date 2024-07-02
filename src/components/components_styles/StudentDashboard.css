@@ -54,11 +54,13 @@ html, body {
 
 .stu-sidebar-item button:hover {
     background-color: #444;
+    border-radius: 10px;
 }
 .stu-main-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    background-color: #333;
 }
 .stu-main-content-body {
     display: flex;
@@ -67,6 +69,48 @@ html, body {
     justify-content: center;
     width: 100%;
 }
+.stu-main-content-area {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+    color: white;
+    height: calc(100vh - 80px); /* Adjust height to fit the screen */
+}
+
+.stu-left-section {
+    flex: 3;
+    padding: 20px;
+    background-color: #2e2e2e; /* Different background color for left section */
+    margin-right: 20px;
+    overflow-y: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.stu-right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between upper and lower sections */
+    background-color: transparent; /* Transparent to see the main background */
+}
+
+.stu-right-upper-section {
+    flex: 2;
+    padding: 20px;
+    background-color: #3e3e3e; /* Different background color for right-upper section */
+    overflow-y: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.stu-right-lower-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #4e4e4e; /* Different background color for right-lower section */
+    overflow-y: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
 
 .main-image {
     width: 50%;
@@ -86,7 +130,7 @@ html, body {
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
-    background-color: #333;
+    background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
