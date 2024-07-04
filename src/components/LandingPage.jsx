@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../js/custom.js'; // Import custom JS
 import logo from '../assets/images/logo2.png';
 import sliderImg from '../assets/images/slider-img.png';
-import heroBg from '../assets/images/hero-bg.png';
+import heroBg from '../assets/images/heroBg.png';
 import jhub from  '../assets/images/JHUB Africa.png';
 import jkuat from  '../assets/images/JKUAT.png';
 import logo2 from  '../assets/images/logo2.png';

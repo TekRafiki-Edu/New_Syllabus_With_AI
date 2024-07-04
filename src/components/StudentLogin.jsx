@@ -53,7 +53,8 @@ const StudentLogin = () => {
           <button onClick={handleLogin}>Login</button>
         </div>
         <p className="forgot-password">
-          <a href="/forgot-password-student">Forgot Password?</a>
+        <a href="/forgot-password-student">Forgot Password?</a>
+        {/*<Link to="/forgot-password-student" relative="path"></Link>*/}
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './components_styles/Homepage.css';
 
 const Homepage = () => {
@@ -137,7 +138,12 @@ const Homepage = () => {
         </div>
         <p className="login-prompt">
           Already have an account?{' '}
-          <a href="/student-login">Student Login</a> or{' '}
+
+          <Link to="/student-login">Log in as Student</Link>
+          <p>  OR </p>
+
+          {/*<a href="/student-login">Student Login</a> or{' '}*/}
+          
           <a href="/lecturer-login">Lecturer Login</a>.
         </p>
       </div>
