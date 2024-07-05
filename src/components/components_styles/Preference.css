@@ -1,78 +1,69 @@
-.preference-body{
-  background-color: rgb(5, 7, 114);
-}
-.preference-page {
-  max-width: 800px;
-  margin: auto;
+.preference-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #2c3e50; /* Dark background color */
+  color: white; /* Text color for better visibility */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.preference-page {
+  width: 100%;
+  max-width: 600px;
+  background: #34495e; /* Slightly lighter dark background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.preference-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ecf0f1; /* Light text color for header */
 }
 
 .question {
-  margin-bottom: 20px;
-}
-
-.question p {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.options {
-  display: inline-block;
-  align-items: center;
-  margin-top: 5px; /* Adjust vertical spacing between options */
+  margin-bottom: 15px;
 }
 
 .options label {
-  display: inline-flex; /* Display options vertically */
-    font-size: 14px; /* Adjust label font size if necessary */
-    margin-bottom: 0; /* Optional: Remove default margin-bottom of label */
-}
-
-.options input[type="checkbox"],
-.options input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px; /* Add space between checkbox/radio and label */
-  flex: 0 0 auto;
+  display: block;
+  margin: 5px 0;
 }
 
 .button-container {
-  margin-top: 20px;
-  text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .back-button,
 .done-button {
-  display: inline-block;
   padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  margin-right: 10px;
-  width: 150px; /* Set a fixed width for consistency */
+  text-align: center;
 }
-
-.back-button {
-  background-color: #007bff; /* Blue color */
-  color: white;
-}
-
-.done-button {
-  background-color: #333; /* Dark background color */
-  color: white; /* White text color */
-  padding: 5px 10px; /* Adjust padding to make the button smaller or larger */
-  border: none; /* Remove border if not needed */
-  border-radius: 5px; /* Optional: Add rounded corners */
-}
-
 
 .back-button:hover,
 .done-button:hover {
-  opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+  background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .preference-page {
+      padding: 15px;
+  }
+
+  .back-button,
+  .done-button {
+      padding: 8px 16px;
+  }
 }

@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/logo2.png';
+import Preference from './Preference';
 
-
-const StudentProfile = () => {
+const StudentDashboard = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
+    const [isPreferenceModalOpen, setPreferenceModalOpen] = useState(false); // State to control Preference modal visibility
     const [selectedSection, setSelectedSection] = useState("Personalization");
     const [theme, setTheme] = useState("dark");
     const [profileImage, setProfileImage] = useState(null);
     const [profileImagePreview, setProfileImagePreview] = useState(null);
-    const [userName, setUserName] = useState(""); // State to hold the user's name
-    const [userInitials, setUserInitials] = useState(""); // State to hold the user's initials
+    const [userName, setUserName] = useState("");
+    const [userInitials, setUserInitials] = useState("");
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -29,12 +30,20 @@ const StudentProfile = () => {
 
     const openSettingsModal = () => {
         setSettingsModalOpen(true);
-        setSelectedSection("Personalization"); // Open the personalization section by default
+        setSelectedSection("Personalization");
         setDropdownOpen(false);
     };
 
     const closeSettingsModal = () => {
         setSettingsModalOpen(false);
+    };
+
+    const openPreferenceModal = () => {
+        setPreferenceModalOpen(true);
+    };
+
+    const closePreferenceModal = () => {
+        setPreferenceModalOpen(false);
     };
 
     const handleImageChange = (e) => {
@@ -51,16 +60,12 @@ const StudentProfile = () => {
 
     const handleNameChange = (e) => {
         setUserName(e.target.value);
-        // Update user initials if a new name is provided
         setUserInitials(e.target.value.split(' ').map(name => name[0]).join(''));
     };
 
     const handleTelephoneChange = (e) => {
-        // Limit input to 10 characters
         const input = e.target.value.substring(0, 10);
-        // Remove any non-digit characters
         const digitsOnly = input.replace(/\D/g, '');
-        // Update the value in the input field
         e.target.value = digitsOnly;
     };
 
@@ -71,18 +76,16 @@ const StudentProfile = () => {
     return (
         <div className={`stu-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
             <div className="stu-sidebar">
-                {/* Logo and text */}
                 <div className="stu-logo-container">
-                    <img src= {logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
+                    <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
                     <span className="stu-logo-text">TekRafiki_AI</span>
                 </div>
                 
-                {/* Sidebar items */}
                 <div className="stu-sidebar-item">
                     <button>Units</button>
                 </div>
                 <div className="stu-sidebar-item">
-                    <button>Preferences</button>
+                    <button onClick={openPreferenceModal}>Preferences</button>
                 </div>
                 <div className="stu-sidebar-item">
                     <button>Chatbot</button>
@@ -90,40 +93,36 @@ const StudentProfile = () => {
             </div>
             
             <div className="stu-main-content">
-    <header className="stu-header">
-        <div className="stu-profile-container" onClick={toggleDropdown}>
-            <div className="stu-profile-initials">{userInitials}</div>
-            {isDropdownOpen && (
-                <div className="stu-dropdown-menu">
-                    <button className="stu-dropdown-item" onClick={openProfileModal}>Profile</button>
-                    <button className="stu-dropdown-item" onClick={openSettingsModal}>Settings</button>
-                    <button className="stu-dropdown-item">Log Out</button>
-                </div>
-            )}
-        </div>
-    </header>
-    <main className="stu-main-content-area">
-        <div className="stu-left-section">
-            <h4>Left section</h4>
-            {/* Left section content goes here */}
-            <div>
-                <img src={logo} alt="" style={{ width: 'auto', height: '100px' }} />
-                <p></p>
+                <header className="stu-header">
+                    <div className="stu-profile-container" onClick={toggleDropdown}>
+                        <div className="stu-profile-initials">{userInitials}</div>
+                        {isDropdownOpen && (
+                            <div className="stu-dropdown-menu">
+                                <button className="stu-dropdown-item" onClick={openProfileModal}>Profile</button>
+                                <button className="stu-dropdown-item" onClick={openSettingsModal}>Settings</button>
+                                <button className="stu-dropdown-item">Log Out</button>
+                            </div>
+                        )}
+                    </div>
+                </header>
+                <main className="stu-main-content-area">
+                    <div className="stu-left-section">
+                        <h4>Left section</h4>
+                        <div>
+                            <img src={logo} alt="" style={{ width: 'auto', height: '100px' }} />
+                            <p></p>
+                        </div>
+                    </div>
+                    <div className="stu-right-section">
+                        <div className="stu-right-upper-section">
+                            <h4>Right upper section</h4>
+                        </div>
+                        <div className="stu-right-lower-section">
+                            <h4>Right lower section</h4>
+                        </div>
+                    </div>
+                </main>
             </div>
-        </div>
-        <div className="stu-right-section">
-            <div className="stu-right-upper-section">
-                <h4>Right upper section</h4>
-                {/* Right-upper section content goes here */}
-            </div>
-            <div className="stu-right-lower-section">
-                <h4>right lower section</h4>
-                {/* Right-lower section content goes here */}
-            </div>
-            </div>
-                 </main>
-             </div>
-
 
             {isProfileModalOpen && (
                 <div className="stu-modal">
@@ -174,7 +173,6 @@ const StudentProfile = () => {
                             <button className={`stu-settings-button ${selectedSection === "Account" ? "active" : ""}`} onClick={() => setSelectedSection("Account")}>Account</button>
                         </div>
                         <div className="stu-settings-form">
-                            {/* Content for personalization, security, and account goes here */}
                             {selectedSection === "Personalization" && (
                                 <div className="stu-personalization-section">
                                     <h2>Personalization</h2>
@@ -191,24 +189,31 @@ const StudentProfile = () => {
                                     </div>
                                 </div>
                             )}
-                              {selectedSection === "Security" && (
-                                  <div>
-                                      <h2>Security</h2>
-                                      <div className="stu-form-group">
-                                          <label>Password:</label>
-                                          <input type="password" />
-                                      </div>
-                                      <button type="button">Change Password</button>
-                                  </div>
-                              )}
-                          
+                            {selectedSection === "Security" && (
+                                <div>
+                                    <h2>Security</h2>
+                                    <div className="stu-form-group">
+                                        <label>Password:</label>
+                                        <input type="password" />
+                                    </div>
+                                    <button type="button">Change Password</button>
+                                </div>
+                            )}
                             {selectedSection === "Account" && (
                                 <div className="stu-account-section">
                                     <h2>Account</h2>
-                                    {/* Account settings go here */}
                                 </div>
                             )}
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {isPreferenceModalOpen && (
+                <div className="stu-modal">
+                    <div className="stu-modal-content">
+                        <span className="stu-close-button" onClick={closePreferenceModal}>&times;</span>
+                        <Preference />
                     </div>
                 </div>
             )}
@@ -216,5 +221,4 @@ const StudentProfile = () => {
     );
 };
 
-export default StudentProfile;
-
+export default StudentDashboard;
