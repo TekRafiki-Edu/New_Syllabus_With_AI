@@ -130,7 +130,7 @@ html, body {
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
-    background-color: #000000;
+    background-color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -139,6 +139,8 @@ html, body {
     display: flex;
     align-items: center;
     cursor: pointer;
+     margin-left: auto;
+     margin-right: 5%;
 }
 
 .stu-profile-initials {
@@ -200,29 +202,34 @@ html, body {
     width: calc(50% - 10px); /* Set form width */
 }
 
+/* Modal background */
 .stu-modal {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background color with transparency */
-    z-index: 1000;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Modal content */
 .stu-modal-content {
-    background-color: #222; /* Dark background color */
+    background-color: #fff;
+    margin: auto;
     padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 800px; /* Increased width for layout purposes */
-    color: #fff;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange children in a column */
-    align-items: center; /* Center items horizontally */
+    animation: fadeIn 0.4s;
+    max-height: 90%; /* Added to make the modal scrollable */
+    overflow-y: auto; /* Added to enable vertical scrolling */
 }
 
 .stu-close-button {
@@ -400,3 +407,71 @@ input[type="tel"]::-webkit-inner-spin-button {
 input[type="tel"] {
     -moz-appearance: textfield;
 }
+
+.stu-question {
+    margin-bottom: 20px;
+  }
+  
+  .stu-question p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .stu-options {
+    display: inline-block;
+    align-items: center;
+    margin-top: 5px; /* Adjust vertical spacing between options */
+  }
+  
+  .stu-options label {
+    display: inline-flex; /* Display options vertically */
+      font-size: 14px; /* Adjust label font size if necessary */
+      margin-bottom: 0; /* Optional: Remove default margin-bottom of label */
+  }
+  
+  .stu-options input[type="checkbox"],
+  .stu-options input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px; /* Add space between checkbox/radio and label */
+    flex: 0 0 auto;
+  }
+  
+  .stu-button-container {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .stu-back-button,
+  .stu-done-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    width: 150px; /* Set a fixed width for consistency */
+  }
+  
+  .stu-back-button {
+    background-color: #333; /* Blue color */
+    color: white;
+  }
+  
+  .stu-done-button {
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    padding: 5px 10px; /* Adjust padding to make the button smaller or larger */
+    border: none; /* Remove border if not needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+  }
+  
+  
+  .stu-back-button:hover,
+  .stu-done-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+  }
+  
