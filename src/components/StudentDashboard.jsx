@@ -11,8 +11,8 @@ const StudentProfile = () => {
     const [theme, setTheme] = useState("dark");
     const [profileImage, setProfileImage] = useState(null);
     const [profileImagePreview, setProfileImagePreview] = useState(null);
-    const [userName, setUserName] = useState(""); // State to hold the user's name
-    const [userInitials, setUserInitials] = useState(""); // State to hold the user's initials
+    const [userName, setUserName] = useState("");
+    const [userInitials, setUserInitials] = useState("");
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -29,7 +29,7 @@ const StudentProfile = () => {
 
     const openSettingsModal = () => {
         setSettingsModalOpen(true);
-        setSelectedSection("Personalization"); // Open the personalization section by default
+        setSelectedSection("Personalization");
         setDropdownOpen(false);
     };
 
@@ -59,16 +59,12 @@ const StudentProfile = () => {
 
     const handleNameChange = (e) => {
         setUserName(e.target.value);
-        // Update user initials if a new name is provided
         setUserInitials(e.target.value.split(' ').map(name => name[0]).join(''));
     };
 
     const handleTelephoneChange = (e) => {
-        // Limit input to 10 characters
         const input = e.target.value.substring(0, 10);
-        // Remove any non-digit characters
         const digitsOnly = input.replace(/\D/g, '');
-        // Update the value in the input field
         e.target.value = digitsOnly;
     };
 
@@ -85,13 +81,12 @@ const StudentProfile = () => {
     return (
         <div className={`stu-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
             <div className="stu-sidebar">
-                {/* Logo and text */}
                 <div className="stu-logo-container">
+                    <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
                     <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
                     <span className="stu-logo-text">TekRafiki_AI</span>
                 </div>
                 
-                {/* Sidebar items */}
                 <div className="stu-sidebar-item">
                     <button>Units</button>
                 </div>
@@ -187,7 +182,6 @@ const StudentProfile = () => {
                             <button className={`stu-settings-button ${selectedSection === "Account" ? "active" : ""}`} onClick={() => setSelectedSection("Account")}>Account</button>
                         </div>
                         <div className="stu-settings-form">
-                            {/* Content for personalization, security, and account goes here */}
                             {selectedSection === "Personalization" && (
                                 <div className="stu-personalization-section">
                                     <h2>Personalization</h2>
@@ -214,10 +208,19 @@ const StudentProfile = () => {
                                     <button type="button">Change Password</button>
                                 </div>
                             )}
+                            {selectedSection === "Security" && (
+                                <div>
+                                    <h2>Security</h2>
+                                    <div className="stu-form-group">
+                                        <label>Password:</label>
+                                        <input type="password" />
+                                    </div>
+                                    <button type="button">Change Password</button>
+                                </div>
+                            )}
                             {selectedSection === "Account" && (
                                 <div className="stu-account-section">
                                     <h2>Account</h2>
-                                    {/* Account settings go here */}
                                 </div>
                             )}
                         </div>
