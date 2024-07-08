@@ -83,7 +83,6 @@ const StudentProfile = () => {
             <div className="stu-sidebar">
                 <div className="stu-logo-container">
                     <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
-                    <img src={logo} alt="Logo" style={{ width: '50px', height: 'auto' }} />
                     <span className="stu-logo-text">TekRafiki_AI</span>
                 </div>
                 
@@ -237,9 +236,9 @@ const StudentProfile = () => {
                             {/* Preferences form content goes here */}
                             <form onSubmit={handleSubmit}>
                                 {/* Feedback Frequency */}
-                                <div className="question">
+                                <div className="stu-question">
                                     <p><strong>How often would you like to receive feedback on your progress?</strong></p>
-                                    <div className="options">
+                                    <div className="stu-options">
                                         <label>
                                             <input type="radio" name="feedback" value="after_lesson" />
                                             After each lesson
@@ -258,9 +257,9 @@ const StudentProfile = () => {
                                 </div>
 
                                 {/* Assessments Preferences */}
-                                <div className="question">
+                                <div className="stu-question">
                                     <p><strong>Which types of assessments do you prefer?</strong></p>
-                                    <div className="options">
+                                    <div className="stu-options">
                                         <label>
                                             <input type="checkbox" name="assessments" value="quizzes" />
                                             Quizzes
