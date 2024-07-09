@@ -4,10 +4,10 @@ import logo from '../assets/images/logo2.png';
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
-    const [inputValue, setInputValue] = useState(''); // State for input value
+    const [inputValue, setInputValue] = useState('');
+    const [selectedConversation, setSelectedConversation] = useState(null);
 
     useEffect(() => {
-        // Load conversation history from local storage or any other storage mechanism
         const savedConversations = JSON.parse(localStorage.getItem('conversations')) || [];
         setMessages(savedConversations);
     }, []);
@@ -17,19 +17,41 @@ const Chatbot = () => {
             const newMessage = { text: inputValue.trim(), sender: 'user' };
             const updatedMessages = [...messages, newMessage];
             setMessages(updatedMessages);
-            localStorage.setItem('conversations', JSON.stringify(updatedMessages)); // Save to local storage
-            setInputValue(''); // Clear input after sending message
-            handleBotResponse(); // Example: Trigger bot response after user input
+            localStorage.setItem('conversations', JSON.stringify(updatedMessages));
+            setInputValue('');
+            setTimeout(() => handleBotResponse(), 500);
         }
     };
 
     const handleBotResponse = () => {
-        // Example bot response logic (replace with your own)
         const botResponse = 'Hello! How can I assist you today?';
         const newMessage = { text: botResponse, sender: 'bot' };
         const updatedMessages = [...messages, newMessage];
         setMessages(updatedMessages);
-        localStorage.setItem('conversations', JSON.stringify(updatedMessages)); // Save to local storage
+        localStorage.setItem('conversations', JSON.stringify(updatedMessages));
+    };
+
+    const handleDeleteConversation = (index) => {
+        const updatedMessages = messages.filter((_, i) => i !== index);
+        setMessages(updatedMessages);
+        localStorage.setItem('conversations', JSON.stringify(updatedMessages));
+        setSelectedConversation(null); // Close options menu after deletion
+    };
+
+    const handleShareConversation = (index) => {
+        // Implement share functionality
+        alert('Share functionality not implemented yet');
+        setSelectedConversation(null); // Close options menu after action
+    };
+
+    const handleArchiveConversation = (index) => {
+        // Implement archive functionality
+        alert('Archive functionality not implemented yet');
+        setSelectedConversation(null); // Close options menu after action
+    };
+
+    const handleOptionsClick = (index) => {
+        setSelectedConversation(index === selectedConversation ? null : index); // Toggle options menu
     };
 
     return (
@@ -37,14 +59,22 @@ const Chatbot = () => {
             <div className="sidebar">
                 <div className="sidebar-header">
                     <img src={logo} alt="Tekrafiki Logo" className="sidebar-logo" />
-                    <h3></h3>
                 </div>
                 <div className="conversation-list">
                     <ul>
                         {messages.map((message, index) => (
                             <li key={index}>
-                                <span className={message.sender}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
                                 {message.text}
+                                <div className="options-container">
+                                    <button className="options-button" onClick={() => handleOptionsClick(index)}>...</button>
+                                    {selectedConversation === index && (
+                                        <div className="options-menu">
+                                            <button onClick={() => handleDeleteConversation(index)}>Delete</button>
+                                            <button onClick={() => handleShareConversation(index)}>Share</button>
+                                            <button onClick={() => handleArchiveConversation(index)}>Archive</button>
+                                        </div>
+                                    )}
+                                </div>
                             </li>
                         ))}
                     </ul>
@@ -54,7 +84,9 @@ const Chatbot = () => {
                 <div className="messages-container">
                     {messages.map((message, index) => (
                         <div key={index} className={`message ${message.sender}`}>
-                            {message.text}
+                            <div className="message-bubble">
+                                {message.text}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -62,11 +94,11 @@ const Chatbot = () => {
                     <input
                         type="text"
                         placeholder="Type your message..."
-                        value={inputValue} // Bind input value to state
-                        onChange={(event) => setInputValue(event.target.value)} // Update input value state
+                        value={inputValue}
+                        onChange={(event) => setInputValue(event.target.value)}
                         onKeyPress={(event) => {
                             if (event.key === 'Enter') {
-                                handleUserMessage(); // Call handleUserMessage on Enter key press
+                                handleUserMessage();
                             }
                         }}
                     />
