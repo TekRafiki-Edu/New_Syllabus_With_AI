@@ -11,6 +11,8 @@ import ForgotPassword from './components/ForgotPassword';
 import StudentDashboard from './components/StudentDashboard';
 import LecturerDashboard from './components/LecturerDashboard';
 import Chatbot from './components/Chatbot';
+import Units from './components/Units';
+
 
 
 
@@ -29,6 +31,7 @@ const App = () => (
       <Route path="/student-dashboard" element={<StudentDashboard />} />
       <Route path="/lecturer-dashboard" element={<LecturerDashboard />} />
       <Route path="/chat-bot" element={<Chatbot />} />
+      <Route path="/units" element={<Units />} />
    
     </Routes>
   </Router>

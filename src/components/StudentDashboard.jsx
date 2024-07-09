@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/logo2.png';
+import Units from './Units'; // Import Units component
 
 const StudentProfile = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -13,6 +14,7 @@ const StudentProfile = () => {
     const [profileImagePreview, setProfileImagePreview] = useState(null);
     const [userName, setUserName] = useState("");
     const [userInitials, setUserInitials] = useState("");
+    const [showUnits, setShowUnits] = useState(false); // State for Units component visibility
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -78,6 +80,10 @@ const StudentProfile = () => {
         console.log('Preferences submitted');
     };
 
+    const toggleUnits = () => {
+        setShowUnits(!showUnits);
+    };
+
     return (
         <div className={`stu-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
             <div className="stu-sidebar">
@@ -87,7 +93,7 @@ const StudentProfile = () => {
                 </div>
                 
                 <div className="stu-sidebar-item">
-                    <button>Units</button>
+                    <button onClick={toggleUnits}>Units</button>
                 </div>
                 <div className="stu-sidebar-item">
                     <button onClick={openPreferencesModal}>Preferences</button>
@@ -132,6 +138,10 @@ const StudentProfile = () => {
                 </main>
             </div>
 
+            {/* Conditionally render Units component */}
+            {showUnits && <Units />}
+
+            {/* Modals */}
             {isProfileModalOpen && (
                 <div className="stu-modal">
                     <div className="stu-modal-content">
