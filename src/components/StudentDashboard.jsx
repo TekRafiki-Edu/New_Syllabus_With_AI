@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/logo2.png';
-import Units from './Units'; // Import Units component
+import Units from './Units'; 
+import Chatbot from './Chatbot';
 
-const StudentProfile = () => {
+const StudentProfile= () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
     const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
@@ -15,6 +16,7 @@ const StudentProfile = () => {
     const [userName, setUserName] = useState("");
     const [userInitials, setUserInitials] = useState("");
     const [showUnits, setShowUnits] = useState(false); // State for Units component visibility
+    const [showChatbot, setShowChatbot] =useState(false);
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -84,6 +86,10 @@ const StudentProfile = () => {
         setShowUnits(!showUnits);
     };
 
+    const toggleChatbot = () => {
+        setShowChatbot(!showChatbot);
+    };
+
     return (
         <div className={`stu-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
             <div className="stu-sidebar">
@@ -99,7 +105,7 @@ const StudentProfile = () => {
                     <button onClick={openPreferencesModal}>Preferences</button>
                 </div>
                 <div className="stu-sidebar-item">
-                    <button>Chatbot</button>
+                    <button onClick={toggleChatbot}>Chatbot</button>
                 </div>
             </div>
             
@@ -138,8 +144,9 @@ const StudentProfile = () => {
                 </main>
             </div>
 
-            {/* Conditionally render Units component */}
-            {showUnits && <Units />}
+             {/* Conditionally render Units and Chatbot components */}
+             {showUnits && <Units />}
+            {showChatbot && <Chatbot />}
 
             {/* Modals */}
             {isProfileModalOpen && (
