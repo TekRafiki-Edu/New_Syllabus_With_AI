@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './components_styles/AdminDashboard.css';
 import logo from '../assets/images/logo2.png';
-import SchoolDetails from './SchoolDetails'; // Import the SchoolDetails component
+import SchoolDetails from './SchoolDetails';
+
 
 const AdminDashboard = () => {
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
-    const [name, setName] = useState("Admin Name");
-    const [telephone, setTelephone] = useState("1234567890");
-    const [department, setDepartment] = useState("Admin Department");
-    const [employeeId, setEmployeeId] = useState("EMP12345");
+    const [activeContent, setActiveContent] = useState('school');
+    const [name, setName] = useState("");
+    const [telephone, setTelephone] = useState("");
+    const [department, setDepartment] = useState("");
+    const [employeeId, setEmployeeId] = useState("");
 
     const openProfileModal = () => {
         setProfileModalOpen(true);
@@ -26,24 +28,27 @@ const AdminDashboard = () => {
                     <span className="admin-logo-text">TekRafiki_Admin</span>
                 </div>
                 <div className="admin-sidebar-item">
-                    <button>School Details</button>
+                    <button onClick={() => setActiveContent('school')}>School Details</button>
                 </div>
                 <div className="admin-sidebar-item">
-                    <button>Curriculum</button>
+                    <button onClick={() => setActiveContent('curriculum')}>Curriculum</button>
                 </div>
                 <div className="admin-sidebar-item">
-                    <button>Validation</button>
+                    <button onClick={() => setActiveContent('validation')}>Validation</button>
                 </div>
             </div>
             
             <div className="admin-main-content">
                 <header className="admin-header">
                     <div className="admin-profile-container" onClick={openProfileModal}>
-                        <div className="admin-profile-name">{name}</div>
+                        <div className="admin-profile-circle">
+                            <span className="admin-profile-initials">{name ? name.charAt(0) : "A"}</span>
+                        </div>
                     </div>
                 </header>
                 <main className="admin-main-content-area">
-                    <SchoolDetails />
+                    {activeContent === 'school' && <SchoolDetails />}
+                    {/* Add other content components as needed */}
                 </main>
             </div>
 

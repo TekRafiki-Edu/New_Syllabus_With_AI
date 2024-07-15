@@ -58,8 +58,19 @@
     align-items: center;
 }
 
-.admin-profile-name {
-    margin-right: 10px;
+.admin-profile-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-profile-initials {
+    color: #fff;
+    font-size: 18px;
 }
 
 .admin-main-content-area {
