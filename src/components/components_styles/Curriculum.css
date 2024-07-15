@@ -1,0 +1,47 @@
+.curriculum-container {
+    display: flex;
+    height: 100vh;
+    background-color: purple;
+    color: white;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .sidebar-button {
+    background-color: black;
+    color: gold;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .radio-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .upload-button,
+  .save-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  

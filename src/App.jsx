@@ -13,9 +13,7 @@ import LecturerDashboard from './components/LecturerDashboard';
 import Chatbot from './components/Chatbot';
 import Units from './components/Units';
 import AdminDashboard from './components/AdminDashboard';
-
-
-
+import Curriculum from './components/Curriculum';
 
 
 const App = () => (
@@ -34,6 +32,7 @@ const App = () => (
       <Route path="/chat-bot" element={<Chatbot />} />
       <Route path="/units" element={<Units />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      <Route path="/curriculum" element={<Curriculum />} />
    
     </Routes>
   </Router>
