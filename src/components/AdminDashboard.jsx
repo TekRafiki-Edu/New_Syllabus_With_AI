@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './components_styles/AdminDashboard.css';
 import logo from '../assets/images/logo2.png';
 import SchoolDetails from './SchoolDetails';
+import Curriculum from './Curriculum';
 
 
 const AdminDashboard = () => {
@@ -48,6 +49,7 @@ const AdminDashboard = () => {
                 </header>
                 <main className="admin-main-content-area">
                     {activeContent === 'school' && <SchoolDetails />}
+                    {activeContent === 'curriculum' && <Curriculum />}
                     {/* Add other content components as needed */}
                 </main>
             </div>
