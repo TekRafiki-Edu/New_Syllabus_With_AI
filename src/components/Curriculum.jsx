@@ -1,73 +1,41 @@
 import React, { useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
 import './components_styles/Curriculum.css';
 
 const Curriculum = () => {
-  const [radioValue, setRadioValue] = useState('curriculum');
-  const [departmentName, setDepartmentName] = useState('');
-  const [courseName, setCourseName] = useState('');
-  const [documentFormat, setDocumentFormat] = useState('DOCS');
+    const [selectedFile, setSelectedFile] = useState(null);
 
-  return (
-    <div className="curriculum-container">
-      <div className="sidebar">
-        <button className="sidebar-button">Profile</button>
-        <button className="sidebar-button">School Details</button>
-        <button className="sidebar-button">Curriculum</button>
-        <button className="sidebar-button">Validation</button>
-      </div>
-      <div className="main-content">
-        <div className="radio-buttons">
-          <label>
-            <input 
-              type="radio" 
-              value="curriculum" 
-              checked={radioValue === 'curriculum'} 
-              onChange={() => setRadioValue('curriculum')} 
-            />
-            Curriculum
-          </label>
-          <label>
-            <input 
-              type="radio" 
-              value="department" 
-              checked={radioValue === 'department'} 
-              onChange={() => setRadioValue('department')} 
-            />
-            Department
-          </label>
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+    };
+
+    const handleUpload = () => {
+        if (selectedFile) {
+            // Handle the file upload logic here
+            console.log(`Uploading: ${selectedFile.name}`);
+        } else {
+            console.log("No file selected.");
+        }
+    };
+
+    return (
+        <div className="curriculum-container">
+            <h2>Curriculum Upload</h2>
+            <div className="upload-section">
+                <label className="upload-button" htmlFor="file-upload">
+                    <FaArrowUp size={24} />
+                </label>
+                <input
+                    type="file"
+                    id="file-upload"
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
+                />
+                {selectedFile && <span>{selectedFile.name}</span>}
+                <button onClick={handleUpload} className="upload-action-button">Upload</button>
+            </div>
         </div>
-        <div className="form-group">
-          <label>Department Name</label>
-          <input 
-            type="text" 
-            value={departmentName} 
-            onChange={(e) => setDepartmentName(e.target.value)} 
-          />
-        </div>
-        <div className="form-group">
-          <label>Course Name</label>
-          <input 
-            type="text" 
-            value={courseName} 
-            onChange={(e) => setCourseName(e.target.value)} 
-          />
-        </div>
-        <div className="form-group">
-          <label>Document format in:</label>
-          <select 
-            value={documentFormat} 
-            onChange={(e) => setDocumentFormat(e.target.value)}
-          >
-            <option value="DOCS">DOCS</option>
-            <option value="DOCX">DOCX</option>
-            <option value="PDF">PDF</option>
-          </select>
-        </div>
-        <button className="upload-button">Upload Curriculum</button>
-        <button className="save-button">Save</button>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Curriculum;
