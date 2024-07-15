@@ -3,7 +3,6 @@ import './components_styles/AdminDashboard.css';
 import logo from '../assets/images/logo2.png';
 import SchoolDetails from './SchoolDetails';
 import Curriculum from './Curriculum';
-
 import Validation from './Validation';
 
 const AdminDashboard = () => {
