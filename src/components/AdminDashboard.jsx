@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './components_styles/AdminDashboard.css';
 import logo from '../assets/images/logo2.png';
 import SchoolDetails from './SchoolDetails';
-
+import Validation from './Validation';
 
 const AdminDashboard = () => {
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
@@ -48,6 +48,7 @@ const AdminDashboard = () => {
                 </header>
                 <main className="admin-main-content-area">
                     {activeContent === 'school' && <SchoolDetails />}
+                    {activeContent === 'validation' && <Validation />}
                     {/* Add other content components as needed */}
                 </main>
             </div>

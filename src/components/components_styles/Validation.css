@@ -1,0 +1,62 @@
+.validation-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.validation-form-group {
+    margin-bottom: 20px;
+}
+
+.validation-form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.validation-form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.validation-requests {
+    margin-top: 20px;
+}
+
+.validation-requests h3 {
+    margin-bottom: 10px;
+}
+
+.validation-requests ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.validation-requests li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.validation-requests li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.validation-requests li button:first-child {
+    background-color: #4caf50;
+    color: white;
+}
+
+.validation-requests li button:last-child {
+    background-color: #f44336;
+    color: white;
+}
