@@ -4,6 +4,7 @@ import logo from '../assets/images/logo2.png';
 import SchoolDetails from './SchoolDetails';
 import Curriculum from './Curriculum';
 
+import Validation from './Validation';
 
 const AdminDashboard = () => {
     const [isProfileModalOpen, setProfileModalOpen] = useState(false);
@@ -50,6 +51,7 @@ const AdminDashboard = () => {
                 <main className="admin-main-content-area">
                     {activeContent === 'school' && <SchoolDetails />}
                     {activeContent === 'curriculum' && <Curriculum />}
+                    {activeContent === 'validation' && <Validation />}
                     {/* Add other content components as needed */}
                 </main>
             </div>
