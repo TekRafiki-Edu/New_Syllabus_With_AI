@@ -1,0 +1,219 @@
+.kickoff-container {
+    background-color: #4B0082; /* Purple background */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .kickoff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .kickoff-logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .kickoff-title {
+    font-size: 24px;
+  }
+  
+  .kickoff-nav {
+    display: flex;
+  }
+  
+  .kickoff-nav .nav-link {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .kickoff-nav .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .kickoff-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .kickoff-image-container {
+    flex: 1;
+  }
+  
+  .kickoff-image {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  
+  .kickoff-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .kickoff-heading {
+    font-size: 36px;
+    color: #FF69B4; /* Hot pink color */
+  }
+  
+  .kickoff-description {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .kickoff-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .kickoff-buttons .kickoff-button {
+    background-color: #FF69B4; /* Hot pink color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .kickoff-buttons .kickoff-button:hover {
+    background-color: #FF1493; /* Darker pink */
+  }
+  
+  .about-us-section {
+    padding: 50px 20px;
+    background-color: #4B0082; /* Purple background */
+    color: white;
+  }
+  
+  .about-us-heading {
+    font-size: 36px;
+    color: #FF69B4; /* Hot pink color */
+  }
+  
+  .about-us-content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-us-description {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .about-us-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .about-us-image {
+    max-width: 45%;
+    border-radius: 15px;
+  }
+  
+  .customer-service-section {
+    padding: 50px 20px;
+  }
+  
+  .customer-service-heading {
+    font-size: 36px;
+    color: #FF69B4; /* Hot pink color */
+  }
+  
+  .customer-service-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .customer-service-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .customer-service-image {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .team-section {
+    padding: 50px 20px;
+    background-color: #4B0082; /* Purple background */
+    color: white;
+  }
+  
+  .team-heading {
+    font-size: 36px;
+    color: #FF69B4; /* Hot pink color */
+  }
+  
+  .team-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .team-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .team-image {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-section {
+    padding: 50px 20px;
+  }
+  
+  .contact-heading {
+    font-size: 36px;
+    color: #FF69B4; /* Hot pink color */
+  }
+  
+  .contact-content {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .contact-logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .contact-logo {
+    max-width: 100px;
+    margin: 0 10px;
+  }
+  
