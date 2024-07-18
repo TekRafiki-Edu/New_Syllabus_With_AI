@@ -1,24 +1,73 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './components_styles/kickoff.css';
 import hero from '../assets/images/heroBg.png';
 import logo from '../assets/images/logo2.png';
 import about from '../assets/images/about us.jpg';
 import student from '../assets/images/students photo.webp';
-import jhub from  '../assets/images/JHUB Africa.png';
-import jkuat from  '../assets/images/JKUAT.png';
-import logo2 from  '../assets/images/logo2.png';
+import jhub from '../assets/images/JHUB Africa.png';
+import jkuat from '../assets/images/JKUAT.png';
+import logo2 from '../assets/images/logo2.png';
 import lec from '../assets/images/lecturer.jpg';
 import uni from '../assets/images/uni.jpg';
 import african from '../assets/images/afrikan styudents.webp';
 
 const Kickoff = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const teamSection = document.querySelector('.team-section');
+      const teamCards = document.querySelectorAll('.team-card');
+      const sectionTop = teamSection.getBoundingClientRect().top;
+      const sectionHeight = teamSection.clientHeight;
+      const windowHeight = window.innerHeight;
+
+      if (sectionTop <= windowHeight && sectionTop + sectionHeight >= 0) {
+        teamCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('animate');
+          }, index * 200); // delay each card by 200ms
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+    elementsToAnimate.forEach(element => {
+      observer.observe(element);
+    });
+
+    return () => {
+      elementsToAnimate.forEach(element => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
+    
     <div className="kickoff-container">
       <header className="kickoff-header">
         <div className="logo-container">
           <img src={logo} alt="Tekrafiki Logo" className="kickoff-logo" />
-          <h1 className="kickoff-title">TEKRAFIKI_A1</h1>
+          <h1 className="kickoff-title">TEKRAFIKI_AI</h1>
         </div>
         <nav className="kickoff-nav">
           <a href="#home" className="nav-link">Home</a>
@@ -26,7 +75,7 @@ const Kickoff = () => {
           <a href="#team" className="nav-link">Team</a>
         </nav>
       </header>
-      <main className="kickoff-main">
+      <main className="kickoff-main"id="home">
         <div className="kickoff-image-container">
           <img src={hero} alt="AI Assistant" className="kickoff-image" />
         </div>
@@ -39,19 +88,22 @@ const Kickoff = () => {
           </div>
         </div>
       </main>
-      <section className="about-us-section" id="about">
-        <h2 className="about-us-heading">ABOUT US</h2>
-        <div className="about-us-content">
-          <p className="about-us-description">
-            We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
-          </p>
-          <div className="about-us-images">
-            <img src={about} alt="Curriculum Design" className="about-us-image" />
-            <img src={african} alt="Technological Trends" className="about-us-image" />
-          </div>
-        </div>
-      </section>
-      <section className="customer-service-section">
+      <section className="about-us-section animate-on-scroll" id="about">
+  <h2 className="about-us-heading">ABOUT US</h2>
+  <div className="about-us-content">
+    <div className="about-us-description">
+      <p>
+        We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
+      </p>
+    </div>
+    <div className="about-us-images">
+      <img src={about} alt="Curriculum Design" className="about-us-image top-image" />
+      <img src={african} alt="Technological Trends" className="about-us-image" />
+    </div>
+  </div>
+</section>
+
+      <section className="customer-service-section animate-on-scroll">
         <h2 className="customer-service-heading">OUR CUSTOMER SERVICE</h2>
         <div className="customer-service-content">
           <div className="customer-service-card">
@@ -71,7 +123,7 @@ const Kickoff = () => {
           </div>
         </div>
       </section>
-      <section className="team-section" id="team">
+      <section className="team-section animate-on-scroll" id="team">
         <h2 className="team-heading">TEAM MEMBERS</h2>
         <div className="team-content">
           <div className="team-card">
@@ -116,7 +168,7 @@ const Kickoff = () => {
           </div>
         </div>
       </section>
-      <section className="contact-section">
+      <section className="contact-section animate-on-scroll">
         <h2 className="contact-heading">GET IN TOUCH TODAY!</h2>
         <div className="contact-content">
           <p>tekrafiki@gmail.com</p>
