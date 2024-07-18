@@ -1,12 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './components_styles/kickoff.css';
+import hero from '../assets/images/heroBg.png';
 import logo from '../assets/images/logo2.png';
 import about from '../assets/images/about us.jpg';
 import student from '../assets/images/students photo.webp';
 import jhub from  '../assets/images/JHUB Africa.png';
 import jkuat from  '../assets/images/JKUAT.png';
 import logo2 from  '../assets/images/logo2.png';
+import lec from '../assets/images/lecturer.jpg';
+import uni from '../assets/images/uni.jpg';
+import african from '../assets/images/afrikan styudents.webp';
 
 const Kickoff = () => {
   return (
@@ -24,7 +28,7 @@ const Kickoff = () => {
       </header>
       <main className="kickoff-main">
         <div className="kickoff-image-container">
-          <img src="/path/to/your/image.png" alt="AI Assistant" className="kickoff-image" />
+          <img src={hero} alt="AI Assistant" className="kickoff-image" />
         </div>
         <div className="kickoff-content">
           <h2 className="kickoff-heading">YOUR NO.1 AI ASSISTANT</h2>
@@ -39,11 +43,11 @@ const Kickoff = () => {
         <h2 className="about-us-heading">ABOUT US</h2>
         <div className="about-us-content">
           <p className="about-us-description">
-            We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehens
+            We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
           </p>
           <div className="about-us-images">
-            <img src="/path/to/about_image1.png" alt="Curriculum Design" className="about-us-image" />
-            <img src="/path/to/about_image2.png" alt="Technological Trends" className="about-us-image" />
+            <img src={about} alt="Curriculum Design" className="about-us-image" />
+            <img src={african} alt="Technological Trends" className="about-us-image" />
           </div>
         </div>
       </section>
@@ -56,12 +60,12 @@ const Kickoff = () => {
             <p>Offer up to date learning resources for Lecturers using AI</p>
           </div>
           <div className="customer-service-card">
-            <img src="/mnt/data/cap5.PNG" alt="Lecturers" className="customer-service-image" />
+            <img src={lec} alt="Lecturers" className="customer-service-image" />
             <h3>LECTURERS</h3>
             <p>Offer personalized learning and AI support for Students</p>
           </div>
           <div className="customer-service-card">
-            <img src="/mnt/data/cap5.PNG" alt="Academic Institutions" className="customer-service-image" />
+            <img src={uni} alt="Academic Institutions" className="customer-service-image" />
             <h3>ACADEMIC INSTITUTIONS</h3>
             <p>Introduce AI Assistants to Students and Lecturers for efficiency in teaching and learning</p>
           </div>
@@ -117,9 +121,9 @@ const Kickoff = () => {
         <div className="contact-content">
           <p>tekrafiki@gmail.com</p>
           <div className="contact-logos">
-            <img src="/mnt/data/cap7.PNG" alt="Logo 1" className="contact-logo" />
-            <img src="/mnt/data/cap7.PNG" alt="Logo 2" className="contact-logo" />
-            <img src="/mnt/data/cap7.PNG" alt="Logo 3" className="contact-logo" />
+            <img src={jkuat} alt="Logo 1" className="contact-logo" />
+            <img src={logo2} alt="Logo 2" className="contact-logo" />
+            <img src={jhub} alt="Logo 3" className="contact-logo" />
           </div>
         </div>
       </section>
