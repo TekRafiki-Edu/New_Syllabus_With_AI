@@ -1,3 +1,4 @@
+// src/components/Kickoff.jsx
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -84,7 +85,7 @@ const Kickoff = () => {
           <p className="kickoff-description">Improving the implementation of the syllabus in the Department of Computing</p>
           <div className="kickoff-buttons">
             <Link to="/homepage" className="kickoff-button">Sign Up</Link>
-            <Link to="/signup" className="kickoff-button">Login</Link>
+            <Link to="/login" className="kickoff-button">Login</Link>
           </div>
         </div>
       </main>

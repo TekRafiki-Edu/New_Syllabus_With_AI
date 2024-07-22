@@ -1,0 +1,103 @@
+/* Overall container styling */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #6a1b9a; /* Purple background */
+  }
+  
+  /* Content styling */
+  .login-content {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Title styling */
+  .login-title {
+    color: #6a1b9a; /* Match purple theme */
+    margin-bottom: 20px;
+  }
+  
+  /* Toggle buttons styling */
+  .login-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .login-toggle-button {
+    background: #6a1b9a; /* Purple background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .login-toggle-button.active {
+    background: #4a0072; /* Darker purple for active state */
+  }
+  
+  .login-toggle-button:hover {
+    background: #4a0072; /* Darker purple on hover */
+  }
+  
+  /* Form styling */
+  .login-form {
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background: #6a1b9a; /* Purple background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background: #4a0072; /* Darker purple on hover */
+  }
+  
+  /* Signup link styling */
+  .signup-link {
+    display: block;
+    margin-top: 10px;
+    color: #6a1b9a; /* Purple text */
+    text-decoration: none;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  

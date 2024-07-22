@@ -14,6 +14,7 @@ import Units from './components/Units';
 import AdminDashboard from './components/AdminDashboard';
 import Curriculum from './components/Curriculum';
 import Kickoff from './components/Kickoff';
+import Login  from './components/Login';
 
 
 const App = () => (
@@ -33,6 +34,7 @@ const App = () => (
       <Route path="/units" element={<Units />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/curriculum" element={<Curriculum />} />
+      <Route path="/login" element={<Login />} />
       
    
     </Routes>
