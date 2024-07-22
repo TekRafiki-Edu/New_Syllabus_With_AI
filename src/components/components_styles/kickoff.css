@@ -85,7 +85,7 @@
 }
 
 .kickoff-buttons .kickoff-button {
-background-color: none;
+  background-color: #FF69B4; /* Hot pink background */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -93,6 +93,8 @@ background-color: none;
   cursor: pointer;
   border-radius: 20px;
   font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .kickoff-buttons .kickoff-button:hover {
@@ -142,7 +144,6 @@ background-color: none;
   border-radius: 10px;
   margin: 0 10px;
 }
-
 
 .customer-service-section {
   padding: 50px 20px;

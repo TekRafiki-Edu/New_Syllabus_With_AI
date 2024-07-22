@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './components_styles/kickoff.css';
 import hero from '../assets/images/heroBg.png';
@@ -62,7 +63,6 @@ const Kickoff = () => {
   }, []);
 
   return (
-    
     <div className="kickoff-container">
       <header className="kickoff-header">
         <div className="logo-container">
@@ -75,7 +75,7 @@ const Kickoff = () => {
           <a href="#team" className="nav-link">Team</a>
         </nav>
       </header>
-      <main className="kickoff-main"id="home">
+      <main className="kickoff-main" id="home">
         <div className="kickoff-image-container">
           <img src={hero} alt="AI Assistant" className="kickoff-image" />
         </div>
@@ -83,25 +83,25 @@ const Kickoff = () => {
           <h2 className="kickoff-heading">YOUR NO.1 AI ASSISTANT</h2>
           <p className="kickoff-description">Improving the implementation of the syllabus in the Department of Computing</p>
           <div className="kickoff-buttons">
-            <button className="kickoff-button">Login</button>
-            <button className="kickoff-button">Sign Up</button>
+            <Link to="/homepage" className="kickoff-button">Sign Up</Link>
+            <Link to="/signup" className="kickoff-button">Login</Link>
           </div>
         </div>
       </main>
       <section className="about-us-section animate-on-scroll" id="about">
-  <h2 className="about-us-heading">ABOUT US</h2>
-  <div className="about-us-content">
-    <div className="about-us-description">
-      <p>
-        We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
-      </p>
-    </div>
-    <div className="about-us-images">
-      <img src={about} alt="Curriculum Design" className="about-us-image top-image" />
-      <img src={african} alt="Technological Trends" className="about-us-image" />
-    </div>
-  </div>
-</section>
+        <h2 className="about-us-heading">ABOUT US</h2>
+        <div className="about-us-content">
+          <div className="about-us-description">
+            <p>
+              We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
+            </p>
+          </div>
+          <div className="about-us-images">
+            <img src={about} alt="Curriculum Design" className="about-us-image top-image" />
+            <img src={african} alt="Technological Trends" className="about-us-image" />
+          </div>
+        </div>
+      </section>
 
       <section className="customer-service-section animate-on-scroll">
         <h2 className="customer-service-heading">OUR CUSTOMER SERVICE</h2>
