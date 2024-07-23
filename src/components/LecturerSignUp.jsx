@@ -1,22 +1,54 @@
-// LecturerSignUp.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './components_styles/LecturerSignUp.css'; 
+import './components_styles/LecturerSignUp.css';
+import { registerUser } from '../services/userService'; // Import the service
 
 const LecturerSignUp = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [department, setDepartment] = useState('');
+  const [courses, setCourses] = useState('');
+  const [units, setUnits] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleBack = () => {
-    navigate('/');  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (
+      firstName.trim() === '' ||
+      lastName.trim() === '' ||
+      department.trim() === '' ||
+      courses.trim() === '' ||
+      units.trim() === '' ||
+      phoneNumber.trim() === ''
+    ) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await registerUser({
+        firstName,
+        lastName,
+        department,
+        courses,
+        units,
+        phoneNumber,
+        role: 'lecturer'
+      });
+      setLoading(false);
+      navigate('/lecturer-dashboard');
+    } catch (error) {
+      setLoading(false);
+      setErrorMessage('Error registering user. Please try again.');
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Signup saved');
-    // Navigate to the Student Profile page
-    navigate('/lecturer-dashboard');
+  const handleBack = () => {
+    navigate('/');
   };
 
   return (
@@ -24,14 +56,63 @@ const LecturerSignUp = () => {
       <div className="lecturer-signup-content">
         <h2>Lecturer Sign Up</h2>
         <div className="form-container">
-          {/* Input fields for First Name, Last Name, Department, Courses, Units, Phone Number */}
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="text" placeholder="Department" />
-          <input type="text" placeholder="Courses" />
-          <input type="text" placeholder="Units" />
-          <input type="text" placeholder="Phone Number" />
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+              setErrorMessage('');
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+              setErrorMessage('');
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Department"
+            value={department}
+            onChange={(e) => {
+              setDepartment(e.target.value);
+              setErrorMessage('');
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Courses"
+            value={courses}
+            onChange={(e) => {
+              setCourses(e.target.value);
+              setErrorMessage('');
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Units"
+            value={units}
+            onChange={(e) => {
+              setUnits(e.target.value);
+              setErrorMessage('');
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            value={phoneNumber}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+              setErrorMessage('');
+            }}
+          />
         </div>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {loading && <p>Loading...</p>}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleSubmit}>Submit</button>

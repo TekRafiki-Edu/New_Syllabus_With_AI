@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './components_styles/StudentSignUp.css';
+import { registerUser } from '../services/userService'; // Import the service
 
 const StudentSignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,9 +12,10 @@ const StudentSignUp = () => {
   const [semester, setSemester] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (
       firstName.trim() === '' ||
       lastName.trim() === '' ||
@@ -24,8 +26,26 @@ const StudentSignUp = () => {
       phoneNumber.trim() === ''
     ) {
       setErrorMessage('Please fill in all required fields.');
-    } else {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await registerUser({
+        firstName,
+        lastName,
+        department,
+        course,
+        yearOfStudy,
+        semester,
+        phoneNumber,
+        role: 'student'
+      });
+      setLoading(false);
       navigate('/student-dashboard');
+    } catch (error) {
+      setLoading(false);
+      setErrorMessage('Error registering user. Please try again.');
     }
   };
 
@@ -101,6 +121,7 @@ const StudentSignUp = () => {
           }}
         />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {loading && <p>Loading...</p>}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleContinue}>Continue</button>
