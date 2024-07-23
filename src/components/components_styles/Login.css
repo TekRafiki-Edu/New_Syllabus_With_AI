@@ -1,103 +1,104 @@
-/* Overall container styling */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #6a1b9a; /* Purple background */
-  }
-  
-  /* Content styling */
-  .login-content {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  /* Title styling */
-  .login-title {
-    color: #6a1b9a; /* Match purple theme */
-    margin-bottom: 20px;
-  }
-  
-  /* Toggle buttons styling */
-  .login-toggle {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .login-toggle-button {
-    background: #6a1b9a; /* Purple background */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-  }
-  
-  .login-toggle-button.active {
-    background: #4a0072; /* Darker purple for active state */
-  }
-  
-  .login-toggle-button:hover {
-    background: #4a0072; /* Darker purple on hover */
-  }
-  
-  /* Form styling */
-  .login-form {
-    text-align: left;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 10px;
-    background: #6a1b9a; /* Purple background */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background: #4a0072; /* Darker purple on hover */
-  }
-  
-  /* Signup link styling */
-  .signup-link {
-    display: block;
-    margin-top: 10px;
-    color: #6a1b9a; /* Purple text */
-    text-decoration: none;
-  }
-  
-  .signup-link:hover {
-    text-decoration: underline;
-  }
-  
+/* Login.css */
+
+body {
+  background: linear-gradient(135deg, #342d9e 0%, #6a1b9a 100%);
+  font-family: 'Roboto', sans-serif; /* Ensure the font is consistent */
+  margin: 0;
+  padding: 0;
+}
+
+.login-content {
+  background: #ffffff; /* White background for the form */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  text-align: center;
+  color: #4a4a4a; /* Darker color for the title */
+  margin-bottom: 1rem;
+}
+
+.login-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-toggle-button {
+  background: #e0e0e0;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #4a4a4a;
+  transition: background 0.3s, color 0.3s;
+}
+
+.login-toggle-button.active {
+  background: #6a1b9a; /* Purple background for the active button */
+  color: #ffffff;
+  border-color: #6a1b9a;
+}
+
+.login-toggle-button:hover {
+  background: #c5cae9; /* Light purple on hover */
+}
+
+.login-form {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: #6a1b9a; /* Purple background */
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background: #4a148c; /* Darker purple on hover */
+}
+
+.signup-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #6a1b9a; /* Purple color for the link */
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}

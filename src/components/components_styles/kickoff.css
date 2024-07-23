@@ -1,21 +1,27 @@
+/* Kickoff.css */
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Example font from Google Fonts */
+  color: #333;
+  line-height: 1.6;
+}
+
 .kickoff-container {
-  background-color: #4B0082; /* Purple background */
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .kickoff-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #4B0082; /* Purple background */
-  z-index: 10; /* Ensure the header is above other elements */
-  position: -webkit-sticky; /* For Safari */
-  position: sticky; /* Sticky position */
-  top: 0; /* Stick to the top */
+  padding: 1rem 2rem;
+  background: #342d9e; /* Dark blue for the header */
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .logo-container {
@@ -25,135 +31,163 @@
 
 .kickoff-logo {
   height: 50px;
-  margin-right: 10px;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+}
+
+.kickoff-logo:hover {
+  transform: scale(1.1); /* Logo zoom effect on hover */
 }
 
 .kickoff-title {
-  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .kickoff-nav {
   display: flex;
 }
 
-.kickoff-nav .nav-link {
-  margin: 0 10px;
-  color: white;
+.nav-link {
+  color: #ffffff;
   text-decoration: none;
-  font-size: 18px;
+  margin: 0 1rem;
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
-.kickoff-nav .nav-link:hover {
+.nav-link:hover {
+  color: #ffd700; /* Gold color on hover */
   text-decoration: underline;
 }
 
 .kickoff-main {
+  position: relative;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+  justify-content: center;
+  background: url('../assets/images/heroBg.png') no-repeat center center/cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  background-size: cover;
+  background-color: #342d9e; /* Dark blue for the hero section */
 }
 
-.kickoff-image-container {
-  flex: 1;
-}
-
-.kickoff-image {
-  max-width: 100%;
-  border-radius: 15px;
+.kickoff-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1;
 }
 
 .kickoff-content {
-  flex: 1;
-  text-align: left;
-  padding: 20px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .kickoff-heading {
-  font-size: 36px;
-  color: #FF69B4; /* Hot pink color */
+  font-size: 3rem; /* Larger heading font size */
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Modern font for headings */
 }
 
 .kickoff-description {
-  font-size: 18px;
-  margin: 20px 0;
+  font-size: 1.25rem;
+  margin: 1rem 0;
 }
 
 .kickoff-buttons {
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
 }
 
-.kickoff-buttons .kickoff-button {
-  background-color: #FF69B4; /* Hot pink background */
-  color: white;
+.kickoff-button {
+  background: #6a1b9a; /* Purple background for buttons */
+  color: #ffffff;
   border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 20px;
-  font-size: 16px;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
   text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
   display: inline-block;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.kickoff-buttons .kickoff-button:hover {
-  background-color: #FF1493; /* Darker pink */
+.kickoff-button:hover {
+  background: #4a148c; /* Darker purple on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .about-us-section {
-  padding: 50px 20px;
-  background-color: #4B0082; /* Purple background */
-  color: white;
-  text-align: center;
+  background-color: #003366; /* Dark blue for the About Us section */
+  color: #ffffff;
+  padding: 2rem;
 }
 
 .about-us-heading {
-  font-size: 2em;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.5rem; /* Larger heading for better emphasis */
+  margin-bottom: 1rem;
 }
 
 .about-us-content {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .about-us-description {
-  flex: 1;
-  max-width: 30%;
-  font-size: 1.2em;
-  margin: 0 20px 20px 0;
-  text-align: left;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  font-size: 1.125rem; /* Slightly larger font for better readability */
+  line-height: 1.8;
 }
 
 .about-us-images {
-  flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 50%;
+  flex-direction: column;
 }
 
 .about-us-image {
-  width: 48%;
-  height: auto;
+  max-width: 100%;
   border-radius: 10px;
-  margin: 0 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+.about-us-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .customer-service-section {
-  padding: 50px 20px;
-  background-color: #4B0082; /* Purple background */
-  color: white;
+  background-color: #0066cc; /* Blue for Customer Service section */
+  color: #ffffff;
+  padding: 2rem;
 }
 
 .customer-service-heading {
-  font-size: 2em;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.5rem; /* Larger heading for better emphasis */
+  margin-bottom: 1rem;
 }
 
 .customer-service-content {
@@ -163,51 +197,60 @@
 }
 
 .customer-service-card {
-  background-color: white;
-  color: #4B0082;
+  background: #004080;
   border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  max-width: 300px;
+  padding: 1rem;
+  margin: 0.5rem;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  flex: 1 1 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.customer-service-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
 .customer-service-image {
   width: 100%;
-  height: auto;
   border-radius: 10px;
-  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.customer-service-image:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .team-section {
-  padding: 50px 20px;
-  background-color: #4B0082; /* Purple background */
-  color: white;
+  background-color: #003366; /* Dark blue for Team section */
+  color: #ffffff;
+  padding: 2rem;
 }
 
 .team-heading {
-  font-size: 36px;
-  color: #FF69B4; /* Hot pink color */
+  text-align: center;
+  font-size: 2.5rem; /* Larger heading for better emphasis */
+  margin-bottom: 1rem;
 }
 
 .team-content {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .team-card {
-  background-color: white;
-  color: black;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 15px;
-  width: 300px;
+  background: #004080;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0.5rem;
   text-align: center;
+  max-width: 200px;
+  flex: 1 1 200px;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.6s, transform 0.6s;
 }
 
 .team-card.animate {
@@ -216,33 +259,98 @@
 }
 
 .team-image {
-  max-width: 100%;
-  border-radius: 15px;
-  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.team-image:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .contact-section {
-  padding: 50px 20px;
+  background-color: #0066cc; /* Blue for Contact section */
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
 }
 
 .contact-heading {
-  font-size: 36px;
-  color: #FF69B4; /* Hot pink color */
+  font-size: 2.5rem; /* Larger heading for better emphasis */
+  margin-bottom: 1rem;
 }
 
 .contact-content {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 .contact-logos {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .contact-logo {
-  max-width: 100px;
-  margin: 0 10px;
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s;
+}
+
+.contact-logo:hover {
+  transform: scale(1.1); /* Logo zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .kickoff-main {
+    height: auto;
+    background-position: center;
+  }
+
+  .about-us-content {
+    flex-direction: column;
+  }
+
+  .about-us-images {
+    flex-direction: column;
+  }
+
+  .customer-service-content {
+    flex-direction: column;
+  }
+
+  .team-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .kickoff-title {
+    font-size: 1.25rem;
+  }
+
+  .kickoff-heading {
+    font-size: 2rem;
+  }
+
+  .kickoff-description {
+    font-size: 1rem;
+  }
+
+  .kickoff-button {
+    padding: 0.5rem 1rem;
+  }
+
+  .about-us-heading,
+  .customer-service-heading,
+  .team-heading,
+  .contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .team-card,
+  .customer-service-card {
+    max-width: 100%;
+  }
 }
