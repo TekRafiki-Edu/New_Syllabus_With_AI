@@ -1,13 +1,24 @@
 // src/services/userService.js
 import api from '../apis/axios';
 
-// Function to register a user
-export const registerUser = async (userData) => {
+// Function to register a student
+export const registerStudent = async (studentData) => {
   try {
-    const response = await api.post('/api/users/register/', userData);
-    return response.data; // Return the response data
+    const response = await api.post('/api/students/register/', studentData); // Adjust endpoint if needed
+    return response.data;
   } catch (error) {
-    console.error('Error registering user:', error);
-    throw error; // Re-throw the error to be handled by the caller
+    console.error('Error registering student:', error);
+    throw error;
+  }
+};
+
+// Function to register a lecturer
+export const registerLecturer = async (lecturerData) => {
+  try {
+    const response = await api.post('/api/lecturers/register/', lecturerData); // Adjust endpoint if needed
+    return response.data;
+  } catch (error) {
+    console.error('Error registering lecturer:', error);
+    throw error;
   }
 };

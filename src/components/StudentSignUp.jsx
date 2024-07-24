@@ -1,6 +1,7 @@
+// src/components/StudentSignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerStudent } from '../services/studentService'; // Import the service
+import { registerStudent } from '../services/userService'; // Import the student registration service
 import './components_styles/StudentSignUp.css';
 
 const StudentSignUp = () => {
@@ -14,7 +15,7 @@ const StudentSignUp = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleContinue = async () => {
+  const handleSubmit = async () => {
     if (
       firstName.trim() === '' ||
       lastName.trim() === '' ||
@@ -34,12 +35,12 @@ const StudentSignUp = () => {
           course,
           yearOfStudy,
           semester,
-          phoneNumber
+          phoneNumber,
         };
-        await registerStudent(studentData); // Call the API service
+        await registerStudent(studentData);
         navigate('/student-dashboard');
       } catch (error) {
-        setErrorMessage('Failed to register. Please try again.');
+        setErrorMessage('Registration failed. Please try again.');
       }
     }
   };
@@ -52,73 +53,18 @@ const StudentSignUp = () => {
     <div className="student-signup-container">
       <div className="student-signup-content">
         <h2>Student Sign Up</h2>
-        <input
-          type="text"
-          placeholder="First Name *"
-          value={firstName}
-          onChange={(e) => {
-            setFirstName(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Last Name *"
-          value={lastName}
-          onChange={(e) => {
-            setLastName(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Department *"
-          value={department}
-          onChange={(e) => {
-            setDepartment(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Course *"
-          value={course}
-          onChange={(e) => {
-            setCourse(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Year of Study *"
-          value={yearOfStudy}
-          onChange={(e) => {
-            setYearOfStudy(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Semester *"
-          value={semester}
-          onChange={(e) => {
-            setSemester(e.target.value);
-            setErrorMessage('');
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Phone Number *"
-          value={phoneNumber}
-          onChange={(e) => {
-            setPhoneNumber(e.target.value);
-            setErrorMessage('');
-          }}
-        />
+        {/* Input fields */}
+        <input type="text" placeholder="First Name *" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        <input type="text" placeholder="Last Name *" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        <input type="text" placeholder="Department *" value={department} onChange={(e) => setDepartment(e.target.value)} />
+        <input type="text" placeholder="Course *" value={course} onChange={(e) => setCourse(e.target.value)} />
+        <input type="text" placeholder="Year of Study *" value={yearOfStudy} onChange={(e) => setYearOfStudy(e.target.value)} />
+        <input type="text" placeholder="Semester *" value={semester} onChange={(e) => setSemester(e.target.value)} />
+        <input type="text" placeholder="Phone Number *" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
-          <button onClick={handleContinue}>Continue</button>
+          <button onClick={handleSubmit}>Continue</button>
         </div>
       </div>
     </div>

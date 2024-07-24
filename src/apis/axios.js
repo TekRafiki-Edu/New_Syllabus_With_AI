@@ -2,8 +2,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL, 
-  timeout: 1000,
+  baseURL: 'http://127.0.0.1:8000', //  API base URL
+  timeout: 1000, // Timeout in milliseconds
 });
 
 export default api;
