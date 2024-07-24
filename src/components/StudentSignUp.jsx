@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { registerStudent } from '../services/studentService'; // Import the service
 import './components_styles/StudentSignUp.css';
-
 
 const StudentSignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -26,9 +26,24 @@ const StudentSignUp = () => {
     ) {
       setErrorMessage('Please fill in all required fields.');
     } else {
-      navigate('/student-dashboard');
+      try {
+        const studentData = {
+          firstName,
+          lastName,
+          department,
+          course,
+          yearOfStudy,
+          semester,
+          phoneNumber
+        };
+        await registerStudent(studentData); // Call the API service
+        navigate('/student-dashboard');
+      } catch (error) {
+        setErrorMessage('Failed to register. Please try again.');
+      }
     }
   };
+
   const handleBack = () => {
     navigate('/');
   };
@@ -101,7 +116,6 @@ const StudentSignUp = () => {
           }}
         />
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        {loading && <p>Loading...</p>}
         <div className="button-container">
           <button onClick={handleBack}>Back</button>
           <button onClick={handleContinue}>Continue</button>
