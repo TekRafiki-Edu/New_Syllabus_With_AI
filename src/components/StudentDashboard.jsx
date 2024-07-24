@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './components_styles/StudentDashboard.css';
 import logo from '../assets/images/logo2.png';
 import Units from './Units'; 
-import Chatbot from './Chatbot';
+
 
 const StudentProfile= () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -17,6 +18,7 @@ const StudentProfile= () => {
     const [userInitials, setUserInitials] = useState("");
     const [showUnits, setShowUnits] = useState(false); // State for Units component visibility
     const [showChatbot, setShowChatbot] =useState(false);
+    const navigate = useNavigate();
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -86,8 +88,8 @@ const StudentProfile= () => {
         setShowUnits(!showUnits);
     };
 
-    const toggleChatbot = () => {
-        setShowChatbot(!showChatbot);
+    const goToChatbot = () => {
+        navigate('/chat-bot');
     };
 
     return (
@@ -105,7 +107,7 @@ const StudentProfile= () => {
                     <button onClick={openPreferencesModal}>Preferences</button>
                 </div>
                 <div className="stu-sidebar-item">
-                    <button onClick={toggleChatbot}>Chatbot</button>
+                    <button onClick={goToChatbot}>Chatbot</button>
                 </div>
             </div>
             
@@ -126,10 +128,7 @@ const StudentProfile= () => {
                     <div className="stu-left-section">
                         <h4>Left section</h4>
                         {/* Left section content goes here */}
-                        <div>
-                            <img src={logo} alt="" style={{ width: 'auto', height: '100px' }} />
-                            <p></p>
-                        </div>
+                        {showUnits && <Units />}
                     </div>
                     <div className="stu-right-section">
                         <div className="stu-right-upper-section">
@@ -145,8 +144,7 @@ const StudentProfile= () => {
             </div>
 
              {/* Conditionally render Units and Chatbot components */}
-             {showUnits && <Units />}
-            {showChatbot && <Chatbot />}
+             
 
             {/* Modals */}
             {isProfileModalOpen && (

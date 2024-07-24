@@ -22,6 +22,8 @@ body {
   background: #342d9e; /* Dark blue for the header */
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative; /* Ensure the header is not fixed */
+  z-index: 1000;
 }
 
 .logo-container {
@@ -67,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../assets/images/heroBg.png') no-repeat center center/cover;
+  background: url('../assets/images/hero-bg.png') no-repeat center center/cover;
   color: #ffffff;
   text-align: center;
   padding: 2rem;
@@ -138,44 +140,52 @@ body {
 }
 
 .about-us-section {
-  background-color: #003366; /* Dark blue for the About Us section */
+  background-color: #342d9e; /* Adjust background color if necessary */
   color: #ffffff;
   padding: 2rem;
+  text-align: center;
 }
 
 .about-us-heading {
-  text-align: center;
-  font-size: 2.5rem; /* Larger heading for better emphasis */
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .about-us-content {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-us-description {
+  flex: 1;
+  max-width: 500px;
+  margin: 1rem;
+}
+
+.about-us-description p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-us-images {
+  flex: 1;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.about-us-description {
-  max-width: 800px;
-  margin-bottom: 2rem;
-  font-size: 1.125rem; /* Slightly larger font for better readability */
-  line-height: 1.8;
-}
-
-.about-us-images {
-  display: flex;
-  flex-direction: column;
-}
-
 .about-us-image {
-  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   transition: transform 0.3s;
 }
 
 .about-us-image:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .customer-service-section {
@@ -240,6 +250,25 @@ body {
   justify-content: center;
 }
 
+.team-section {
+  text-align: center;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Adjust gradient to match your design */
+  color: white;
+  padding: 50px 0;
+}
+
+.team-heading {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: white; /* Adjust color to match your design */
+}
+
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .team-card {
   background: #004080;
   border-radius: 10px;
@@ -253,6 +282,16 @@ body {
   transition: opacity 0.6s, transform 0.6s;
 }
 
+.team-card h3 {
+  margin: 10px 0;
+  font-size: 1.5em;
+}
+
+.team-card p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: white; /* Adjust color to match your design */
+}
 .team-card.animate {
   opacity: 1;
   transform: translateY(0);
@@ -267,6 +306,16 @@ body {
 .team-image:hover {
   transform: scale(1.05); /* Zoom effect on hover */
 }
+
+.laurel {
+  display: inline-block;
+  margin: 0 auto 10px;
+  width: 50px;
+  height: 50px;
+  background: url('../assets/images/laurel.PNG') no-repeat center center;
+  background-size: contain;
+}
+
 
 .contact-section {
   background-color: #0066cc; /* Blue for Contact section */
