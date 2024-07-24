@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './components_styles/LecturerSignUp.css';
-import { registerUser } from '../services/userService'; // Import the service
+
 
 const LecturerSignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,7 +11,6 @@ const LecturerSignUp = () => {
   const [units, setUnits] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -25,26 +24,9 @@ const LecturerSignUp = () => {
       phoneNumber.trim() === ''
     ) {
       setErrorMessage('Please fill in all required fields.');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      await registerUser({
-        firstName,
-        lastName,
-        department,
-        courses,
-        units,
-        phoneNumber,
-        role: 'lecturer'
-      });
-      setLoading(false);
+    } else {
       navigate('/lecturer-dashboard');
-    } catch (error) {
-      setLoading(false);
-      setErrorMessage('Error registering user. Please try again.');
-    }
+    } 
   };
 
   const handleBack = () => {
