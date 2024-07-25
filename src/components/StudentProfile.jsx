@@ -1,7 +1,7 @@
 // src/components/StudentSignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './components_styles/StudentSignUp.css';
+import './components_styles/StudentProfile.css';
 
 const StudentProfile = () => {
   const [firstName, setFirstName] = useState('');

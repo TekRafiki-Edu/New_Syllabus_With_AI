@@ -1,9 +1,9 @@
 // src/components/LecturerSignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './components_styles/LecturerSignUp.css';
+import './components_styles/LecturerProfile.css';
 
-const LecturerSignUp = () => {
+const LecturerProfile = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [department, setDepartment] = useState('');
@@ -64,4 +64,4 @@ const LecturerSignUp = () => {
   );
 };
 
-export default LecturerSignUp;
+export default LecturerProfile;
