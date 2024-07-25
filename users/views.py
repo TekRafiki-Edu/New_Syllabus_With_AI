@@ -64,20 +64,23 @@ def student_login(request):
         return Response({'error': 'Missing required fields'}, status=status.HTTP_400_BAD_REQUEST)
     
     user = None
+
     if '@' in identifier:
+        # Handle authentication by email
         user = authenticate(email=identifier, password=password)
     else:
+        # Handle authentication by registration number
         try:
-            profile = StudentProfile.objects.get(registration_number=identifier)
-            user = authenticate(email=profile.user.email, password=password)
-        except StudentProfile.DoesNotExist:
-            pass
+            user = CustomUser.objects.get(student_id=identifier)
+            # Use Django's built-in authentication method
+            user = authenticate(username=user.username, password=password)
+        except CustomUser.DoesNotExist:
+            return Response({'error': 'Invalid credentials or user does not exist'}, status=status.HTTP_400_BAD_REQUEST)
     
     if user is None or not user.is_student:
         return Response({'error': 'Invalid credentials or user is not a student'}, status=status.HTTP_400_BAD_REQUEST)
     
-    profile = StudentProfile.objects.get(user=user)
-    serializer = StudentProfileSerializer(profile)
+    serializer = CustomUserSerializer(user)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
 
