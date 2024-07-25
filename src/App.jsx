@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StudentProfile from './components/StudentProfile'; 
-import LecturerSignUp from './components/LecturerSignUp';
+import LecturerProfile from './components/LecturerProfile';
 import Preference from './components/Preference';
 import StudentLogin from './components/StudentLogin';
 import LecturerLogin from './components/LecturerLogin';
@@ -12,7 +12,7 @@ import Chatbot from './components/Chatbot';
 import Units from './components/Units';
 import AdminDashboard from './components/AdminDashboard';
 import Curriculum from './components/Curriculum';
-import Kickoff from './components/Kickoff';
+import LandingPage from './components/LandingPage';
 import Login  from './components/Login';
 import Signup from './components/Signup';
 import Chat from './components/Chat';
@@ -21,12 +21,12 @@ import Chat from './components/Chat';
 const App = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Kickoff />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/Chat" element={<Chat />} />
       
       <Route path="/Signup" element={<Signup />} />
       <Route path="/student-profile" element={<StudentProfile />} />
-      <Route path="/lecturer-signup" element={<LecturerSignUp />} />
+      <Route path="/lecturer-profile" element={<LecturerProfile />} />
       <Route path="/preference" element={<Preference />} />
       <Route path="/student-login" element={<StudentLogin />} />
       <Route path="/lecturer-login" element={<LecturerLogin />} />
