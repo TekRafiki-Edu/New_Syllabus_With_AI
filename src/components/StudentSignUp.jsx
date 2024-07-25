@@ -1,7 +1,6 @@
 // src/components/StudentSignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerStudent } from '../services/userService'; // Import the student registration service
 import './components_styles/StudentSignUp.css';
 
 const StudentSignUp = () => {
@@ -37,8 +36,6 @@ const StudentSignUp = () => {
           semester,
           phoneNumber,
         };
-        await registerStudent(studentData);
-        navigate('/student-dashboard');
       } catch (error) {
         setErrorMessage('Registration failed. Please try again.');
       }

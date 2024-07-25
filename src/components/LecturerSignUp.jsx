@@ -1,7 +1,6 @@
 // src/components/LecturerSignUp.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerLecturer } from '../services/userService'; // Import the lecturer registration service
 import './components_styles/LecturerSignUp.css';
 
 const LecturerSignUp = () => {
@@ -34,8 +33,6 @@ const LecturerSignUp = () => {
           units,
           phoneNumber,
         };
-        await registerLecturer(lecturerData);
-        navigate('/lecturer-dashboard');
       } catch (error) {
         setErrorMessage('Registration failed. Please try again.');
       }
