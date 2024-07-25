@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import StudentSignUp from './components/StudentSignUp'; 
+import StudentProfile from './components/StudentProfile'; 
 import LecturerSignUp from './components/LecturerSignUp';
 import Preference from './components/Preference';
 import StudentLogin from './components/StudentLogin';
@@ -15,14 +14,18 @@ import AdminDashboard from './components/AdminDashboard';
 import Curriculum from './components/Curriculum';
 import Kickoff from './components/Kickoff';
 import Login  from './components/Login';
+import Signup from './components/Signup';
+import Chat from './components/Chat';
 
 
 const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Kickoff />} />
-      <Route path="/homepage" element={<Homepage />} />
-      <Route path="/student-signup" element={<StudentSignUp />} />
+      <Route path="/Chat" element={<Chat />} />
+      
+      <Route path="/Signup" element={<Signup />} />
+      <Route path="/student-profile" element={<StudentProfile />} />
       <Route path="/lecturer-signup" element={<LecturerSignUp />} />
       <Route path="/preference" element={<Preference />} />
       <Route path="/student-login" element={<StudentLogin />} />

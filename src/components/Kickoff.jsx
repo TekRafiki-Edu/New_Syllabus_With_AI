@@ -84,7 +84,7 @@ const Kickoff = () => {
         <h2 className="kickoff-heading">YOUR NO.1 AI ASSISTANT</h2>
         <p className="kickoff-description">Improving the implementation of the syllabus in the Department of Computing</p>
         <div className="kickoff-buttons">
-            <Link to="/homepage" className="kickoff-button">Sign Up</Link>
+            <Link to="/Signup" className="kickoff-button">Sign Up</Link>
             <Link to="/login" className="kickoff-button">Login</Link>
         </div>
     </div>

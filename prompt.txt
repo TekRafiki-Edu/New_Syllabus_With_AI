@@ -1,0 +1,16 @@
+I am working on a react project(vite and js) and backend is django. inside src/utils I have my file called axios.js with the server configuration below 
+
+provide the file
+
+I have the react component below 
+
+provide the component 
+
+on submit, I want to check all fields have value, then I want to call the endpoint below 
+http://127.0.0.1:8000/api/users/register/ and submit my data collected from the form. 
+the endpoint is documeted as below 
+
+provide api documetation and api response
+
+depending on the api response I want to show a flash message to the user, also accouting for when the api didnt respond or wasnt called.,
+Generate full updated component
