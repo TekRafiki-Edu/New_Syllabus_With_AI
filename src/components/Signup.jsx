@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import api from '../utils/axios'; // Corrected import path
 import './components_styles/Homepage.css';
 
-const Homepage = () => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [registrationNumber, setRegistrationNumber] = useState('');
   const [employeeId, setEmployeeId] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
   const [role, setRole] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -19,28 +21,55 @@ const Homepage = () => {
     return emailRegex.test(email);
   };
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
+    setErrorMessage('');
+    setSuccessMessage('');
+
     if (email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       setErrorMessage('Please fill in all required fields.');
-    } else if (!validateEmail(email)) {
+      return;
+    }
+
+    if (!validateEmail(email)) {
       setErrorMessage('Please enter a valid email address.');
-    } else if (password !== confirmPassword) {
+      return;
+    }
+
+    if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match.');
-    } else {
-      if (role === 'student') {
-        if (registrationNumber.trim() === '') {
-          setErrorMessage('Please enter your registration number.');
-          return;
-        }
-        navigate('/student-signup');
-      } else if (role === 'lecturer') {
-        if (employeeId.trim() === '') {
-          setErrorMessage('Please enter your employee ID.');
-          return;
-        }
-        navigate('/lecturer-signup');
+      return;
+    }
+
+    if (role === 'student' && registrationNumber.trim() === '') {
+      setErrorMessage('Please enter your registration number.');
+      return;
+    }
+
+    if (role === 'lecturer' && employeeId.trim() === '') {
+      setErrorMessage('Please enter your employee ID.');
+      return;
+    }
+
+    const userData = {
+      email,
+      user_type: role,
+      password,
+      student_id: role === 'student' ? registrationNumber : undefined,
+      employee_id: role === 'lecturer' ? employeeId : undefined,
+    };
+    console.log(userData);
+
+    try {
+      const response = await api.post('/api/users/register/', userData);
+      if (response.data.success) {
+        setSuccessMessage('User registered successfully.');
+        navigate(role === 'student' ? '/student-profile' : '/lecturer-signup');
+      }
+    } catch (error) {
+      if (error.response && error.response.data.error) {
+        setErrorMessage(error.response.data.error);
       } else {
-        setErrorMessage('Please select a role.');
+        setErrorMessage('An error occurred. Please try again.');
       }
     }
   };
@@ -48,6 +77,7 @@ const Homepage = () => {
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
 
   return (
     <div className="homepage-container">
@@ -133,17 +163,14 @@ const Homepage = () => {
           </span>
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
         <div className="button-container">
           <button onClick={handleSignUp}>Sign Up</button>
         </div>
         <p className="login-prompt">
           Already have an account?{' '}
-
           <Link to="/student-login">Log in as Student</Link>
           <p>  OR </p>
-
-          {/*<a href="/student-login">Student Login</a> or{' '}*/}
-          
           <a href="/lecturer-login">Lecturer Login</a>.
         </p>
       </div>
@@ -151,4 +178,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Signup;

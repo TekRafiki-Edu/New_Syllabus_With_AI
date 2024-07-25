@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './components_styles/StudentSignUp.css';
 
-const StudentSignUp = () => {
+const StudentProfile = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [department, setDepartment] = useState('');
@@ -68,4 +68,4 @@ const StudentSignUp = () => {
   );
 };
 
-export default StudentSignUp;
+export default StudentProfile;
