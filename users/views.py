@@ -8,8 +8,10 @@ from django.contrib.auth.models import User
 from .models import CustomUser, StudentProfile, NonStudentProfile
 from .serializers import UserSerializer, StudentProfileSerializer, NonStudentProfileSerializer
 from django.utils.text import slugify
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 @api_view(['POST'])
 def register_user(request):
     email = request.data.get('email')
@@ -52,6 +54,7 @@ def register_user(request):
     
     return Response({'success': 'User registered successfully'}, status=status.HTTP_201_CREATED)
 
+@csrf_exempt
 @api_view(['POST'])
 def student_login(request):
     identifier = request.data.get('registration_number') or request.data.get('email')
@@ -78,6 +81,7 @@ def student_login(request):
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
 
+@csrf_exempt
 @api_view(['POST'])
 def non_student_login(request):
     employee_id = request.data.get('employee_id')
