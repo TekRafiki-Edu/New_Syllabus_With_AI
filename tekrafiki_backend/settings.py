@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'institutions',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,3 +138,32 @@ AUTH_USER_MODEL = 'users.CustomUser'
 #         'rest_framework.authentication.TokenAuthentication',
 #     ],
 # }
+
+# Allow all origins
+CORS_ALLOW_ALL_ORIGINS = True
+
+# If you want to allow only specific origins
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     'http://127.0.0.1:3000',
+# ]
+
+# Allow credentials if needed
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'Access-Control-Allow-Origin',
+]
+
+# Allow specific methods
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
