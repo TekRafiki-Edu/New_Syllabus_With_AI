@@ -87,22 +87,32 @@ def student_login(request):
 @csrf_exempt
 @api_view(['POST'])
 def non_student_login(request):
-    employee_id = request.data.get('employee_id')
+    identifier = request.data.get('employee_id') or request.data.get('email')
     password = request.data.get('password')
     
-    if not employee_id or not password:
+    if not identifier or not password:
         return Response({'error': 'Missing required fields'}, status=status.HTTP_400_BAD_REQUEST)
     
-    try:
-        profile = NonStudentProfile.objects.get(employee_number=employee_id)
-        user = authenticate(email=profile.user.email, password=password)
-    except NonStudentProfile.DoesNotExist:
-        user = None
+    user = None
+
+    if '@' in identifier:
+        # Handle authentication by email
+        user = authenticate(email=identifier, password=password)
+    else:
+        # Handle authentication by employee ID
+        try:
+            user = CustomUser.objects.get(employee_id=identifier)
+            # Use Django's built-in authentication method
+            user = authenticate(username=user.username, password=password)
+        except CustomUser.DoesNotExist:
+            return Response({'error': 'Invalid credentials or user does not exist'}, status=status.HTTP_400_BAD_REQUEST)
     
+    # Check if user is authenticated and is not a student
     if user is None or user.is_student:
         return Response({'error': 'Invalid credentials or user is a student'}, status=status.HTTP_400_BAD_REQUEST)
     
-    serializer = NonStudentProfileSerializer(profile)
+    # Serialize user data
+    serializer = CustomUserSerializer(user)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
 
