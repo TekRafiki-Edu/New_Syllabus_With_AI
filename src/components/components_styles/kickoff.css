@@ -1,5 +1,3 @@
-/* Kickoff.css */
-
 /* Global Styles */
 body {
   margin: 0;
@@ -292,6 +290,7 @@ body {
   font-size: 1em;
   color: white; /* Adjust color to match your design */
 }
+
 .team-card.animate {
   opacity: 1;
   transform: translateY(0);
@@ -315,7 +314,6 @@ body {
   background: url('../assets/images/laurel.PNG') no-repeat center center;
   background-size: contain;
 }
-
 
 .contact-section {
   background-color: #0066cc; /* Blue for Contact section */
@@ -402,4 +400,18 @@ body {
   .customer-service-card {
     max-width: 100%;
   }
+}
+
+/* Lottie Animation */
+.kickoff-image-container {
+  width: 100%;
+  height: 400px; /* Adjust as necessary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kickoff-image {
+  max-width: 100%;
+  height: auto;
 }

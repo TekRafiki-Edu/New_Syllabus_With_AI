@@ -164,7 +164,11 @@ const StudentProfile= () => {
                             <h2>Profile</h2>
                             <form>
                                 <div className="stu-form-group">
-                                    <label>Name:</label>
+                                    <label>First Name:</label>
+                                    <input type="text" value={userName} onChange={handleNameChange} />
+                                </div>
+                                <div className="stu-form-group">
+                                    <label>Last Name:</label>
                                     <input type="text" value={userName} onChange={handleNameChange} />
                                 </div>
                                 <div className="stu-form-group">
@@ -177,6 +181,14 @@ const StudentProfile= () => {
                                 </div>
                                 <div className="stu-form-group">
                                     <label>Department:</label>
+                                    <input type="text" />
+                                </div>
+                                <div className="stu-form-group">
+                                    <label>Year of Study:</label>
+                                    <input type="text" />
+                                </div>
+                                <div className="stu-form-group">
+                                    <label>Semester:</label>
                                     <input type="text" />
                                 </div>
                                 <button type="submit">Save</button>

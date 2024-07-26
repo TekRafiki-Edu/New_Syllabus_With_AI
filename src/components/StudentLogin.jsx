@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import api from '../utils/axios';  // Ensure you have the correct import
 import './components_styles/StudentLogin.css';
 
 const StudentLogin = () => {
@@ -9,12 +10,29 @@ const StudentLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (registrationNumber.trim() === '' || password.trim() === '') {
       setErrorMessage('Please fill in all required fields.');
     } else {
-      // Handle the login logic here
-      navigate('/student-dashboard');
+      try {
+        const response = await api.post('/api/users/login/student/', {
+          registration_number: registrationNumber,
+          password,
+        });
+
+        if (response.data.success) {
+          // Navigate to student dashboard or other relevant page
+          navigate('/student-dashboard');
+        } else {
+          setErrorMessage(response.data.error || 'An error occurred. Please try again.');
+        }
+      } catch (error) {
+        if (error.response && error.response.data.error) {
+          setErrorMessage(error.response.data.error);
+        } else {
+          setErrorMessage('An error occurred. Please try again.');
+        }
+      }
     }
   };
 
@@ -53,8 +71,7 @@ const StudentLogin = () => {
           <button onClick={handleLogin}>Login</button>
         </div>
         <p className="forgot-password">
-        <a href="/forgot-password-student">Forgot Password?</a>
-        {/*<Link to="/forgot-password-student" relative="path"></Link>*/}
+          <a href="/forgot-password-student">Forgot Password?</a>
         </p>
       </div>
     </div>

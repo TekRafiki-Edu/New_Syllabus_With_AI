@@ -1,4 +1,3 @@
-// src/components/Kickoff.jsx
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -13,6 +12,7 @@ import logo2 from '../assets/images/logo2.png';
 import lec from '../assets/images/lecturer.jpg';
 import uni from '../assets/images/uni.jpg';
 import hack from '../assets/images/hack.jpg';
+import LottieAnimation from './LottieAnimation'; // Adjust the path accordingly
 
 const LandingPage = () => {
   useEffect(() => {
@@ -62,7 +62,7 @@ const LandingPage = () => {
       });
     };
   }, []);
-  
+
   return (
     <div className="kickoff-container">
       <header className="kickoff-header">
@@ -77,36 +77,34 @@ const LandingPage = () => {
         </nav>
       </header>
       <main className="kickoff-main" id="home">
-    <div className="kickoff-image-container">
-        <img src={hack} alt="AI Assistant" className="kickoff-image" />
-    </div>
-    <div className="kickoff-content">
-        <h2 className="kickoff-heading">YOUR NO.1 AI ASSISTANT</h2>
-        <p className="kickoff-description">Improving the implementation of the syllabus in the Department of Computing</p>
-        <div className="kickoff-buttons">
+        <div className="kickoff-image-container">
+          <LottieAnimation /> {/* Insert the Lottie animation component */}
+        </div>
+        <div className="kickoff-content">
+          <h2 className="kickoff-heading">YOUR NO.1 AI ASSISTANT</h2>
+          <p className="kickoff-description">Improving the implementation of the syllabus in the Department of Computing</p>
+          <div className="kickoff-buttons">
             <Link to="/Signup" className="kickoff-button">Sign Up</Link>
             <Link to="/login" className="kickoff-button">Login</Link>
+          </div>
         </div>
-    </div>
-</main>
-
+      </main>
       <section className="about-us-section animate-on-scroll" id="about">
-  <h2 className="about-us-heading">ABOUT US</h2>
-  <div className="about-us-content">
-    <div className="about-us-description">
-      <p>
-        We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
-      </p>
-    </div>
-    <div className="about-us-images">
-      <div className="image-container">
-        <img src={about} alt="Technological Trends" className="about-us-image main-image" />
-        <img src={hack} alt="Curriculum Design" className="about-us-image overlay-image" />
-      </div>
-    </div>
-  </div>
-</section>
-
+        <h2 className="about-us-heading">ABOUT US</h2>
+        <div className="about-us-content">
+          <div className="about-us-description">
+            <p>
+              We are a robust AI-driven platform that streamlines curriculum design processes and enhances educational content. It involves leveraging Large Language Models to develop an AI-driven platform that will assist in curriculum design by suggesting relevant topics, subtopics, and detailed content coverage. It will also analyze current technological trends and educational standards to ensure the syllabus remains cutting-edge and comprehensive.
+            </p>
+          </div>
+          <div className="about-us-images">
+            <div className="image-container">
+              <img src={about} alt="Technological Trends" className="about-us-image main-image" />
+              <img src={hack} alt="Curriculum Design" className="about-us-image overlay-image" />
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="customer-service-section animate-on-scroll">
         <h2 className="customer-service-heading">OUR CUSTOMER SERVICE</h2>
         <div className="customer-service-content">
@@ -128,51 +126,50 @@ const LandingPage = () => {
         </div>
       </section>
       <section className="team-section animate-on-scroll" id="team">
-  <h2 className="team-heading">TEAM MEMBERS</h2>
-  <div className="team-content">
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Dr. Lawrence Nderu</h3>
-      <p>Principal Administrator</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Erenest Kiprop</h3>
-      <p>Research Advisor</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Teresiah Njeri</h3>
-      <p>Project Manager/Front-end Developer</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Joel Ng'ang'a</h3>
-      <p>Front-end Developer</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Vanessa Kalondu</h3>
-      <p>UI/UX Designer</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Viona Njenga</h3>
-      <p>UI/UX Designer</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Nimrod Mutisya</h3>
-      <p>Backend Developer</p>
-    </div>
-    <div className="team-card">
-      <div className="laurel"></div>
-      <h3>Richard Karanu</h3>
-      <p>Backend Developer</p>
-    </div>
-  </div>
-</section>
-
+        <h2 className="team-heading">TEAM MEMBERS</h2>
+        <div className="team-content">
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Dr. Lawrence Nderu</h3>
+            <p>Principal Administrator</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Erenest Kiprop</h3>
+            <p>Research Advisor</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Teresiah Njeri</h3>
+            <p>Project Manager/Front-end Developer</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Joel Ng'ang'a</h3>
+            <p>Front-end Developer</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Vanessa Kalondu</h3>
+            <p>UI/UX Designer</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Viona Njenga</h3>
+            <p>UI/UX Designer</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Nimrod Mutisya</h3>
+            <p>Backend Developer</p>
+          </div>
+          <div className="team-card">
+            <div className="laurel"></div>
+            <h3>Richard Karanu</h3>
+            <p>Backend Developer</p>
+          </div>
+        </div>
+      </section>
       <section className="contact-section animate-on-scroll">
         <h2 className="contact-heading">GET IN TOUCH TODAY!</h2>
         <div className="contact-content">
