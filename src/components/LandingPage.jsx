@@ -14,7 +14,7 @@ import uni from '../assets/images/uni.jpg';
 import hack from '../assets/images/hack.jpg';
 import LottieAnimation from './LottieAnimation'; // Adjust the path accordingly
 
-const Kickoff = () => {
+const LandingPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const teamSection = document.querySelector('.team-section');
@@ -185,4 +185,4 @@ const Kickoff = () => {
   );
 };
 
-export default Kickoff;
+export default LandingPage;

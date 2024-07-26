@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import api from '../utils/axios'; // Corrected import path
-import './components_styles/Homepage.css';
+import './components_styles/Signup.css';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -63,7 +63,7 @@ const Signup = () => {
       const response = await api.post('/api/users/register/', userData);
       if (response.data.success) {
         setSuccessMessage('User registered successfully.');
-        navigate(role === 'student' ? '/student-profile' : '/lecturer-signup');
+        navigate(role === 'student' ? '/student-profile' : '/lecturer-profile');
       }
     } catch (error) {
       if (error.response && error.response.data.error) {
