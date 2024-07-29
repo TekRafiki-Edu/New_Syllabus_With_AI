@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .models import CustomUser, StudentProfile, NonStudentProfile
-from .serializers import UserSerializer, StudentProfileSerializer, NonStudentProfileSerializer
+from . import serializers
 from django.utils.text import slugify
 from django.views.decorators.csrf import csrf_exempt
 
@@ -57,7 +57,7 @@ def register_user(request):
 @csrf_exempt
 @api_view(['POST'])
 def student_login(request):
-    identifier = request.data.get('registration_number') or request.data.get('email')
+    identifier = request.data.get('student_id') or request.data.get('email')
     password = request.data.get('password')
     
     if not identifier or not password:
@@ -80,7 +80,7 @@ def student_login(request):
     if user is None or not user.is_student:
         return Response({'error': 'Invalid credentials or user is not a student'}, status=status.HTTP_400_BAD_REQUEST)
     
-    serializer = CustomUserSerializer(user)
+    serializer = serializers.CustomUserSerializer(user)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
 
@@ -112,7 +112,7 @@ def non_student_login(request):
         return Response({'error': 'Invalid credentials or user is a student'}, status=status.HTTP_400_BAD_REQUEST)
     
     # Serialize user data
-    serializer = CustomUserSerializer(user)
+    serializer = serializers.CustomUserSerializer(user)
     return Response({'success': serializer.data}, status=status.HTTP_200_OK)
 
 
@@ -122,40 +122,62 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.shortcuts import get_object_or_404
 from .models import CustomUser, StudentProfile, NonStudentProfile
-from .serializers import StudentProfileSerializer, NonStudentProfileSerializer, CustomUserSerializer
+from . import serializers
+from rest_framework.views import APIView
 
-class StudentProfileViewSet(viewsets.ViewSet):
-    def create(self, request):
-        user_id = request.data.get('user_id')
-        user = get_object_or_404(CustomUser, user_id=user_id, is_student=True)
-        serializer = StudentProfileSerializer(data=request.data)
+class StudentProfileView(APIView):
+    def get(self, request):
+        serializer = serializers.StudentProfileViewSerializer(data=request.query_params)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.context['user']
+        
+        try:
+            profile = StudentProfile.objects.get(user=user)
+        except StudentProfile.DoesNotExist:
+            return Response({"error": "Student profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        profile_serializer = serializers.StudentProfileSerializer(profile)
+        return Response(profile_serializer.data)
+
+    def post(self, request):
+        serializer = serializers.StudentProfileSerializer(data=request.data, context={'request': request})
         if serializer.is_valid():
-            serializer.save(user=user)
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def list(self, request):
-        queryset = StudentProfile.objects.all()
-        serializer = StudentProfileSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def retrieve(self, request, pk=None):
-        profile = get_object_or_404(StudentProfile, pk=pk)
-        serializer = StudentProfileSerializer(profile)
-        return Response(serializer.data)
-
-    def update(self, request, pk=None):
-        profile = get_object_or_404(StudentProfile, pk=pk)
-        serializer = StudentProfileSerializer(profile, data=request.data, partial=True)
+    def put(self, request):
+        view_serializer = serializers.StudentProfileViewSerializer(data=request.data)
+        view_serializer.is_valid(raise_exception=True)
+        user = view_serializer.context['user']
+        
+        try:
+            profile = StudentProfile.objects.get(user=user)
+        except StudentProfile.DoesNotExist:
+            return Response({"error": "Student profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = serializers.StudentProfileSerializer(profile, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def destroy(self, request, pk=None):
-        profile = get_object_or_404(StudentProfile, pk=pk)
+    def delete(self, request):
+        view_serializer = serializers.StudentProfileViewSerializer(data=request.data)
+        view_serializer.is_valid(raise_exception=True)
+        user = view_serializer.context['user']
+        
+        try:
+            profile = StudentProfile.objects.get(user=user)
+        except StudentProfile.DoesNotExist:
+            return Response({"error": "Student profile not found"}, status=status.HTTP_404_NOT_FOUND)
+        
         profile.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        user.is_student = False
+        user.student_id = None
+        user.save()
+        return Response({"message": "Student profile deleted successfully"}, status=status.HTTP_200_OK)
+    
 
 class NonStudentProfileViewSet(viewsets.ViewSet):
     def create(self, request):

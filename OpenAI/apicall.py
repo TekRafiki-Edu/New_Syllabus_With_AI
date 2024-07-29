@@ -20,8 +20,10 @@ You are a helpful research assistant.Make me a poem about fish.
 def chat(query):
 
     messages = [
-        {"role": "system", 
-         "content": query},
+        {
+        "role": "system", 
+        "content": query
+        },
         
     ]
 
