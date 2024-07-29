@@ -8,7 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [registrationNumber, setRegistrationNumber] = useState('');
+  const [studentId, setStudentId] = useState('');
   const [employeeId, setEmployeeId] = useState('');
   const [role, setRole] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -40,7 +40,7 @@ const Signup = () => {
       return;
     }
 
-    if (role === 'student' && registrationNumber.trim() === '') {
+    if (role === 'student' && studentId.trim() === '') {
       setErrorMessage('Please enter your registration number.');
       return;
     }
@@ -54,7 +54,7 @@ const Signup = () => {
       email,
       user_type: role,
       password,
-      student_id: role === 'student' ? registrationNumber : undefined,
+      student_id: role === 'student' ? studentId : undefined,
       employee_id: role === 'lecturer' ? employeeId : undefined,
     };
     console.log(userData);
@@ -63,7 +63,7 @@ const Signup = () => {
       const response = await api.post('/api/users/register/', userData);
       if (response.data.success) {
         setSuccessMessage('User registered successfully.');
-        navigate(role === 'student' ? '/student-profile' : '/lecturer-profile');
+        navigate(role === 'student' ? '/login' : '/login');
       }
     } catch (error) {
       if (error.response && error.response.data.error) {
@@ -108,9 +108,9 @@ const Signup = () => {
             <input
               type="text"
               placeholder="Enter your registration number *"
-              value={registrationNumber}
+              value={studentId}
               onChange={(e) => {
-                setRegistrationNumber(e.target.value);
+                setStudentId(e.target.value);
                 setErrorMessage('');
               }}
             />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './components_styles/LecturerDashboard.css';
 import leclogo from '../assets/images/lec-logo.png';
+import Units from './Units';
 
 const LecturerDashboard = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -12,6 +13,9 @@ const LecturerDashboard = () => {
     const [profileImagePreview, setProfileImagePreview] = useState(null);
     const [userName, setUserName] = useState(""); // State to hold the user's name
     const [userInitials, setUserInitials] = useState(""); // State to hold the user's initials
+    const [showUnits, setShowUnits] = useState(false);
+
+    
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -66,11 +70,14 @@ const LecturerDashboard = () => {
     const handleThemeChange = (e) => {
         setTheme(e.target.value);
     };
+    const toggleUnits = () => {
+        setShowUnits(!showUnits);
+    };
 
     return (
         <div className="lec-container">
             <div className="lec-header">
-                <button className="lec-header-button">Units</button>
+                <button className="lec-header-button" onClick={toggleUnits}>Units</button>
                 <div className="lec-logo-container">
                     <img src={leclogo} alt="Logo" className="lec-logo" />
                     <span className="lec-logo-text">TekRafiki_AI</span>
@@ -88,14 +95,10 @@ const LecturerDashboard = () => {
             </div>
             <main className="lec-main-content">
                 <div className="lec-left-section">
-                    {/* Left section content goes here */}
-                    <h2>Left Section</h2>
-                    <p>This is the left section of the main content.</p>
+                {showUnits && <Units />}
                 </div>
                 <div className="lec-right-section">
                     {/* Right section content goes here */}
-                    <h2>Right Section</h2>
-                    <p>This is the right section of the main content.</p>
                 </div>
             </main>
             {/* Profile Modal */}

@@ -7,8 +7,8 @@ html, body {
 }
 .curriculum-container {
   padding: 20px;
-  background-color: #333; /* Dark background color */
-  color: white; /* White text color for contrast */
+  background-color: white; /* Dark background color */
+  color: dark; /* White text color for contrast */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
