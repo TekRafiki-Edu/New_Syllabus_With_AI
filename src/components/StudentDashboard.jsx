@@ -126,17 +126,14 @@ const StudentProfile= () => {
                 </header>
                 <main className="stu-main-content-area">
                     <div className="stu-left-section">
-                        <h4>Left section</h4>
                         {/* Left section content goes here */}
                         {showUnits && <Units />}
                     </div>
                     <div className="stu-right-section">
                         <div className="stu-right-upper-section">
-                            <h4>Right upper section</h4>
                             {/* Right-upper section content goes here */}
                         </div>
                         <div className="stu-right-lower-section">
-                            <h4>right lower section</h4>
                             {/* Right-lower section content goes here */}
                         </div>
                     </div>

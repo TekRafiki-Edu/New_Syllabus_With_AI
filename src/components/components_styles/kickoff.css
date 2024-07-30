@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Example font from Google Fonts */
+  font-family: 'Roboto', sans-serif;
   color: #333;
   line-height: 1.6;
 }
@@ -20,8 +20,7 @@ body {
   background: #342d9e; /* Dark blue for the header */
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: relative; /* Ensure the header is not fixed */
-  z-index: 1000;
+  position: relative !important; 
 }
 
 .logo-container {
@@ -61,6 +60,7 @@ body {
   text-decoration: underline;
 }
 
+
 .kickoff-main {
   position: relative;
   height: 100vh;
@@ -72,7 +72,7 @@ body {
   text-align: center;
   padding: 2rem;
   background-size: cover;
-  background-color: #342d9e; /* Dark blue for the hero section */
+  background-color: #000; /* Dark blue for the hero section */
 }
 
 .kickoff-main::before {
