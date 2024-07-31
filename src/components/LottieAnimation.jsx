@@ -8,7 +8,7 @@ const LottieAnimation = () => {
     <div
       style={{
         position: 'absolute', // Position the animation precisely
-        top: '20px',         // Adjust the top position
+        top: ' 200px',         // Adjust the top position
         left: '400px',        // Adjust the left position
         width: '800px',      // Set the width of the animation
         height: '1000px',     // Set the height of the animation
