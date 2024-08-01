@@ -1,31 +1,48 @@
 import React, { useState } from 'react';
-import './components_styles/ForgotPassword.css'; // Import the CSS file
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
-  const handleForgotPassword = (e) => {
-    e.preventDefault();
-    // Handle forgot password logic here
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            // Call your API endpoint to send the reset password link
+            const response = await fetch('/api/password-reset', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+            const data = await response.json();
+            if (data.success) {
+                setMessage('Password reset link has been sent to your email.');
+            } else {
+                setMessage('Error sending password reset link.');
+            }
+        } catch (error) {
+            setMessage('An error occurred. Please try again later.');
+        }
+    };
 
-  return (
-    <div className="forgot-password-container">
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleForgotPassword}>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    return (
+        <div className="forgot-password-container">
+            <h2>Forgot Password</h2>
+            <form onSubmit={handleSubmit} className="forgot-password-form">
+                <label htmlFor="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <button type="submit">Send Reset Link</button>
+            </form>
+            {message && <p className="message">{message}</p>}
         </div>
-        <button type="submit" className="forgot-password-button">Submit</button>
-      </form>
-    </div>
-  );
+    );
 };
 
 export default ForgotPassword;
